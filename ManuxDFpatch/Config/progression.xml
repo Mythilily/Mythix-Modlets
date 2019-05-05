@@ -1,0 +1,17 @@
+<configs>
+  <append xpath="/progression/perks[1]">
+    <!-- Flying vehicles are powerful so they need proper gating -->
+    <perk name="perkFlyingVehicles" parent="skillPerks" min_level="0" max_level="2" base_skill_point_cost="2" cost_multiplier_per_level="1.5" name_key="perkFlyingVehiclesName" desc_key="perkFlyingVehiclesDesc" icon="ui_game_symbol_electric_power">
+  		<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkMasterMechanic" operation="GTE" value="1" desc_key="MasterMechanic"/><requirement name="PlayerLevel" target="self" operation="GTE" value="75" desc_key="PlayerLevel75"/></level_requirements>
+      <level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkMasterMechanic" operation="GTE" value="1" desc_key="MasterMechanic"/><requirement name="PlayerLevel" target="self" operation="GTE" value="100" desc_key="PlayerLevel100"/></level_requirements>
+  		<effect_group>
+  			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1,2" value="1" tags="vehicleGyroCopterChassis,vehicleGyroCopterAccessories,vehicleGyrocopterPlaceable,manux_vehiclePedalGyroPlaceable"/>
+        <passive_effect name="RecipeTagUnlocked" operation="base_set" level="2" value="1" tags="manux_vehicleHelicopterRotor,manux_vehicleHelicopterChassis,manux_vehicleHelicopterOH58Placeable,manux_vehicleJetPackPlaceable"/>
+  			<effect_description level="1" desc_key="perkFlyingVehicles1"/>
+        <effect_description level="2" desc_key="perkFlyingVehicles2"/>
+  		</effect_group>
+  	</perk>
+  </append>
+  <!-- Other land based vehicles -->
+	<append xpath="/progression/perks/perk[@name='perkMasterMechanic']/effect_group/passive_effect[@level='1']/@tags">,manux_bigEngine,manux_vehicleCarChassis,manux_vehicleCarAccessories,manux_vehicleHP4x4TruckPlaceable,manux_vehicleQuadPlaceable,manux_vehicleHellGoatBikePlaceable,manux_vehicleRoadHogPlaceable,manux_vehicleCicadaCarPlaceable,manux_vehicleBigWheels,manux_vehicleMonsterBeetlePlaceable,manux_vehicleMonoHogPlaceable</append>
+</configs>

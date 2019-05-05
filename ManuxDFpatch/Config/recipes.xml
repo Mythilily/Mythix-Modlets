@@ -1,0 +1,83 @@
+<configs>
+	<append xpath="/recipes">
+		<!-- Vanilla gyro parts -->
+		<recipe name="vehicleGyroCopterAccessories" count="1" craft_area="workstationMetal" craft_tool="DFtoolweldingTorch" tags="learnable">
+			<ingredient name="resourceElectricParts" count="40"/>
+			<ingredient name="resourceHeadlight" count="8"/>
+			<ingredient name="resourceMetalPipe" count="60"/>
+		</recipe>
+
+		<recipe name="vehicleGyroCopterChassis" count="1" craft_area="workstationMetal" craft_tool="DFtoolweldingTorch" tags="learnable">
+			<ingredient name="resourceForgedSteel" count="150"/>
+			<ingredient name="resourceMechanicalParts" count="50"/>
+			<ingredient name="resourceDuctTape" count="25"/>
+			<ingredient name="resourceLeather" count="50"/>
+			<ingredient name="resourceElectricParts" count="20"/>
+		</recipe>
+
+		<recipe name="vehicleGyrocopterPlaceable" count="1" craft_area="workstationMetal" craft_tool="DFtoolweldingTorch" tags="learnable">
+			<ingredient name="vehicleWheels" count="3"/>
+			<ingredient name="vehicleGyroCopterChassis" count="1"/>
+			<ingredient name="vehicleGyroCopterAccessories" count="1"/>
+			<ingredient name="smallEngine" count="1"/>
+			<ingredient name="carBattery" count="1"/>
+		</recipe>
+	</append>
+	<!-- Make it so every vehicle is crafted in metal workbench with the Welding Torch-->
+	<set xpath="/recipes/recipe[@name='manux_bigEngine']/@craft_area">workstationMetal</set>
+	<setattribute xpath="/recipes/recipe[@name='manux_bigEngine']" name="craft_tool">DFtoolweldingTorch</setattribute>
+
+	<set xpath="/recipes/recipe[@name='manux_vehicleCarChassis']/@craft_area">workstationMetal</set>
+	<setattribute xpath="/recipes/recipe[@name='manux_vehicleCarChassis']" name="craft_tool">DFtoolweldingTorch</setattribute>
+
+	<set xpath="/recipes/recipe[@name='manux_vehicleCarAccessories']/@craft_area">workstationMetal</set>
+	<setattribute xpath="/recipes/recipe[@name='manux_vehicleCarAccessories']" name="craft_tool">DFtoolweldingTorch</setattribute>
+
+	<set xpath="/recipes/recipe[@name='manux_vehicleHP4x4TruckPlaceable']/@craft_area">workstationMetal</set>
+	<setattribute xpath="/recipes/recipe[@name='manux_vehicleHP4x4TruckPlaceable']" name="tags">learnable</setattribute>
+	<setattribute xpath="/recipes/recipe[@name='manux_vehicleHP4x4TruckPlaceable']" name="craft_tool">DFtoolweldingTorch</setattribute>
+
+	<set xpath="/recipes/recipe[@name='manux_vehicleQuadPlaceable']/@craft_area">workstationMetal</set>
+	<setattribute xpath="/recipes/recipe[@name='manux_vehicleQuadPlaceable']" name="tags">learnable</setattribute>
+	<setattribute xpath="/recipes/recipe[@name='manux_vehicleQuadPlaceable']" name="craft_tool">DFtoolweldingTorch</setattribute>
+
+	<set xpath="/recipes/recipe[@name='manux_vehicleHellGoatBikePlaceable']/@craft_area">workstationMetal</set>
+	<setattribute xpath="/recipes/recipe[@name='manux_vehicleHellGoatBikePlaceable']" name="tags">learnable</setattribute>
+	<setattribute xpath="/recipes/recipe[@name='manux_vehicleHellGoatBikePlaceable']" name="craft_tool">DFtoolweldingTorch</setattribute>
+
+	<set xpath="/recipes/recipe[@name='manux_vehicleRoadHogPlaceable']/@craft_area">workstationMetal</set>
+	<setattribute xpath="/recipes/recipe[@name='manux_vehicleRoadHogPlaceable']" name="tags">learnable</setattribute>
+	<setattribute xpath="/recipes/recipe[@name='manux_vehicleRoadHogPlaceable']" name="craft_tool">DFtoolweldingTorch</setattribute>
+
+	<set xpath="/recipes/recipe[@name='manux_vehicleCicadaCarPlaceable']/@craft_area">workstationMetal</set>
+	<setattribute xpath="/recipes/recipe[@name='manux_vehicleCicadaCarPlaceable']" name="tags">learnable</setattribute>
+	<setattribute xpath="/recipes/recipe[@name='manux_vehicleCicadaCarPlaceable']" name="craft_tool">DFtoolweldingTorch</setattribute>
+
+	<setattribute xpath="/recipes/recipe[@name='manux_vehicleBigWheels']" name="craft_tool">meleeToolClawHammer</setattribute>
+
+	<set xpath="/recipes/recipe[@name='manux_vehicleMonsterBeetlePlaceable']/@craft_area">workstationMetal</set>
+	<setattribute xpath="/recipes/recipe[@name='manux_vehicleMonsterBeetlePlaceable']" name="tags">learnable</setattribute>
+	<setattribute xpath="/recipes/recipe[@name='manux_vehicleMonsterBeetlePlaceable']" name="craft_tool">DFtoolweldingTorch</setattribute>
+
+	<set xpath="/recipes/recipe[@name='manux_vehicleHelicopterChassis']/@craft_area">workstationMetal</set>
+	<setattribute xpath="/recipes/recipe[@name='manux_vehicleHelicopterChassis']" name="craft_tool">DFtoolweldingTorch</setattribute>
+
+	<set xpath="/recipes/recipe[@name='manux_vehicleHelicopterRotor']/@craft_area">workstationMetal</set>
+	<setattribute xpath="/recipes/recipe[@name='manux_vehicleHelicopterRotor']" name="craft_tool">DFtoolweldingTorch</setattribute>
+
+	<set xpath="/recipes/recipe[@name='manux_vehicleHelicopterOH58Placeable']/@craft_area">workstationMetal</set>
+	<setattribute xpath="/recipes/recipe[@name='manux_vehicleHelicopterOH58Placeable']" name="tags">learnable</setattribute>
+	<setattribute xpath="/recipes/recipe[@name='manux_vehicleHelicopterOH58Placeable']" name="craft_tool">DFtoolweldingTorch</setattribute>
+
+	<set xpath="/recipes/recipe[@name='manux_vehicleJetPackPlaceable']/@craft_area">workstationMetal</set>
+	<setattribute xpath="/recipes/recipe[@name='manux_vehicleJetPackPlaceable']" name="tags">learnable</setattribute>
+	<setattribute xpath="/recipes/recipe[@name='manux_vehicleJetPackPlaceable']" name="craft_tool">DFtoolweldingTorch</setattribute>
+
+	<set xpath="/recipes/recipe[@name='manux_vehiclePedalGyroPlaceable']/@craft_area">workstationMetal</set>
+	<setattribute xpath="/recipes/recipe[@name='manux_vehiclePedalGyroPlaceable']" name="tags">learnable</setattribute>
+	<setattribute xpath="/recipes/recipe[@name='manux_vehiclePedalGyroPlaceable']" name="craft_tool">DFtoolweldingTorch</setattribute>
+
+	<set xpath="/recipes/recipe[@name='manux_vehicleMonoHogPlaceable']/@craft_area">workstationMetal</set>
+	<setattribute xpath="/recipes/recipe[@name='manux_vehicleMonoHogPlaceable']" name="tags">learnable</setattribute>
+	<setattribute xpath="/recipes/recipe[@name='manux_vehicleMonoHogPlaceable']" name="craft_tool">DFtoolweldingTorch</setattribute>
+ </configs>
