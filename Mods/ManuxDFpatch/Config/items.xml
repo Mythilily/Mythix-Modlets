@@ -1,0 +1,67 @@
+<configs>
+  <append xpath="/items[1]">
+    <item name="questFlyingVehiclesT1">
+    	<property name="Extends" value="challengeQuestMaster"/>
+      <property name="CustomIconTint" value="42f4d4"/>
+    	<property class="Action0">
+    		<property name="QuestGiven" value="questFlyingVehiclesT1_p1"/>
+    	</property>
+    </item>
+    <item name="questFlyingVehiclesT2">
+      <property name="Extends" value="challengeQuestMaster"/>
+      <property name="CustomIconTint" value="a00000"/>
+      <property class="Action0">
+        <property name="QuestGiven" value="questFlyingVehiclesT2_p1"/>
+      </property>
+    </item>
+    <item name="meleeHandZombieStrongFeralCharged">
+    	<property name="Extends" value="meleeHandZombieStrongFeral"/>
+    	<property name="CreativeMode" value="None"/>
+    	<property class="Action0">
+    		<!-- <property name="DamageEntity" value="40"/>
+    		<property name="DamageBlock" value="80"/> -->
+        <property name="Buff" value="buffInjuryBleeding,buffIllInfection1,buffInjuryStunned1,buffShocked"/>
+    	</property>
+    	<effect_group name="Base Effects">
+    		<passive_effect name="ModSlots" operation="base_set" value="0"/>
+        <passive_effect name="BuffProcChance" operation="base_set" value="0.30" tags="buffInjuryBleeding"/>
+    		<passive_effect name="BuffProcChance" operation="base_set" value="0.20" tags="buffIllInfection1"/>
+    		<passive_effect name="BuffProcChance" operation="base_set" value="0.30" tags="buffInjuryStunned1"/>
+        <passive_effect name="BuffProcChance" operation="base_set" value="0.25" tags="buffShocked"/>
+    	</effect_group>
+    </item>
+    <item name="meleeHandZombieWorkerFeralCharged">
+    	<property name="Extends" value="meleeHandZombieWorkerFeral"/>
+    	<property name="CreativeMode" value="None"/>
+    	<property class="Action0">
+    		<!-- <property name="DamageEntity" value="20"/>
+    		<property name="DamageBlock" value="200"/> -->
+        <property name="Buff" value="buffInjuryBleeding,buffIllInfection1,buffInjuryStunned1,buffShocked"/>
+    	</property>
+    	<effect_group name="Base Effects">
+    		<passive_effect name="ModSlots" operation="base_set" value="0"/>
+        <passive_effect name="BuffProcChance" operation="base_set" value="0.25" tags="buffInjuryBleeding"/>
+    		<passive_effect name="BuffProcChance" operation="base_set" value="0.20" tags="buffIllInfection1"/>
+    		<passive_effect name="BuffProcChance" operation="base_set" value="0.25" tags="buffInjuryStunned1"/>
+        <passive_effect name="BuffProcChance" operation="base_set" value="0.25" tags="buffShocked"/>
+    	</effect_group>
+    </item>
+    <item name="meleeHandZombieCopCharged">
+    	<property name="Extends" value="meleeHandZombieCop"/>
+    	<property name="CreativeMode" value="None"/>
+    	<property class="Action0">
+    		<!-- <property name="Range" value="1.75"/>
+    		<property name="DamageEntity" value="20"/>
+    		<property name="DamageBlock" value="200"/> -->
+    		<property name="Buff" value="buffInjuryBleeding,buffIllInfection1,buffInjuryStunned1,buffShocked"/>
+    	</property>
+    	<effect_group name="Base Effects">
+    		<passive_effect name="ModSlots" operation="base_set" value="0"/>
+        <passive_effect name="BuffProcChance" operation="base_set" value="0.20" tags="buffInjuryBleeding"/>
+    		<passive_effect name="BuffProcChance" operation="base_set" value="0.20" tags="buffIllInfection1"/>
+    		<passive_effect name="BuffProcChance" operation="base_set" value="0.25" tags="buffInjuryStunned1"/>
+        <passive_effect name="BuffProcChance" operation="base_set" value="0.25" tags="buffShocked"/>
+    	</effect_group>
+    </item>
+  </append>
+</configs>

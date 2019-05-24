@@ -1,0 +1,10 @@
+<configs>
+  <append xpath="/lootcontainers/lootcontainer[@id='95']">
+    <item name="questFlyingVehiclesT1" prob="0.10"/>
+    <item name="questFlyingVehiclesT2" prob="0.05"/>
+  </append>
+  <append xpath="/lootcontainers/lootcontainer[@id='144']">
+    <item name="questFlyingVehiclesT1" prob="0.10"/>
+    <item name="questFlyingVehiclesT2" prob="0.05"/>
+  </append>
+</configs>

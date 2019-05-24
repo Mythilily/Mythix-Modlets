@@ -1,0 +1,40 @@
+<config>
+  <append xpath="/entity_classes">
+    <entity_class name="zombieWightFeralCharged" extends="zombieWightFeral">
+      <property name="Tags" value="entity,zombie,walker,feral"/>
+      <property name="Buffs" value="buffZombieCharged"/>
+      <property name="MoveSpeedAggro" value="1.0, 2.0"/>
+      <property name="HandItem" value="meleeHandZombieCopCharged"/>
+      <effect_group name="Base Effects">
+        <!-- <passive_effect name="Mobility" operation="base_set" value="5.0"/> -->
+    		<passive_effect name="DistractionResistance" operation="base_set" value="0,0"/>
+    		<passive_effect name="HealthMax" operation="base_set" value="798"/>
+    		<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+    		<passive_effect name="EntityDamage" operation="perc_add" value="0"/>
+    	</effect_group>
+    </entity_class>
+    <entity_class name="zombieSoldierFeralCharged" extends="zombieSoldierFeral">
+      <property name="Tags" value="entity,zombie,walker,feral"/>
+      <property name="Buffs" value="buffZombieCharged"/>
+      <property name="MoveSpeedAggro" value="1.0, 2.0"/>
+      <property name="HandItem" value="meleeHandZombieWorkerFeralCharged"/>
+      <effect_group name="Base Effects">
+    		<passive_effect name="HealthMax" operation="base_set" value="435"/>
+    		<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+        <passive_effect name="PhysicalDamageResist" operation="base_set" value="50"/>
+    		<passive_effect name="EntityDamage" operation="perc_add" value="0"/>
+    	</effect_group>
+    </entity_class>
+    <entity_class name="zombieBikerFeralCharged" extends="zombieBikerFeral">
+      <property name="Tags" value="entity,zombie,walker,feral"/>
+      <property name="Buffs" value="buffZombieCharged"/>
+      <property name="MoveSpeedAggro" value="1.0, 2.0"/>
+      <property name="HandItem" value="meleeHandZombieStrongFeralCharged"/>
+      <effect_group name="Base Effects">
+    		<passive_effect name="HealthMax" operation="base_set" value="653"/>
+    		<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+        <passive_effect name="PhysicalDamageResist" operation="base_set" value="20"/>
+    	</effect_group>
+    </entity_class>
+  </append>
+</config>

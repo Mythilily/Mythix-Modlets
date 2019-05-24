@@ -1,0 +1,19 @@
+<configs>
+  <append xpath="/buffs[1]">
+    <buff name="buffZombieCharged" name_key="buffZombieChargedDesc" description_key="buffZombieChargedDesc" tooltip_key="buffZombieChargedDesc" icon="ui_game_symbol_electric_power" icon_color="255,255,255">
+  		<stack_type value="ignore"/>
+  		<duration value="123456789"/>
+  		<update_rate value="2.5"/>
+  		<effect_group>
+  			<passive_effect name="BuffResistance" operation="base_add" value="1" tags="buffShocked"/>
+        <!-- <passive_effect name="RunSpeed" operation="perc_add" value="2.0, 0" duration="0,123456789" />
+        <passive_effect name="WalkSpeed" operation="perc_add" value="2.0, 0" duration="0,123456789" />
+        <passive_effect name="Mobility" operation="perc_add" value="2.0"/> -->
+  			<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_electric_shock" local_offset="0,0.9,0"/>
+  			<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="p_electric_shock" local_offset="0,0.9,0"/>
+			  <triggered_effect trigger="onSelfBuffStart" action="StopSound" sound="electric_fence_impact" />
+        <triggered_effect trigger="onSelfBuffUpdate" action="StopSound" sound="electric_fence_impact" />
+  		</effect_group>
+  	</buff>
+  </append>
+</configs>

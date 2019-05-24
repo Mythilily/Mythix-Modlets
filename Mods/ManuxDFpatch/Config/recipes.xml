@@ -2,6 +2,7 @@
 	<append xpath="/recipes">
 		<!-- Vanilla gyro parts -->
 		<recipe name="vehicleGyroCopterAccessories" count="1" craft_area="workstationMetal" craft_tool="DFtoolweldingTorch" tags="learnable">
+			<ingredient name="resourceForgedSteel" count="75"/>
 			<ingredient name="resourceElectricParts" count="40"/>
 			<ingredient name="resourceHeadlight" count="8"/>
 			<ingredient name="resourceMetalPipe" count="60"/>
