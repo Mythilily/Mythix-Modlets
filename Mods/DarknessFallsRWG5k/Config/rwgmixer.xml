@@ -6,5 +6,5 @@
   <!-- Size 9216 => Medium9 -->
   <!-- Size 10000 => Mediumish10 -->
   <!-- Note: if you want any other size, you have to edit rwgmixer.xml | Not recommended -->
-  <set xpath="/rwgmixer/world/@ruleset">Small5</set>
+  <set xpath="/rwgmixer/world/@ruleset">Medium8</set>
 </config>
