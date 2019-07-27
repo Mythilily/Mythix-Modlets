@@ -1,0 +1,10 @@
+<config>
+  <!-- Modlet to fix biomes when using another size -->
+  <!-- Change the name Medium8 to the following -->
+  <!-- Size 5500 => Small5 -->
+  <!-- Size 8192 => Medium8 -->
+  <!-- Size 9216 => Medium9 -->
+  <!-- Size 10000 => Mediumish10 -->
+  <!-- Note: if you want any other size, you have to edit rwgmixer.xml | Not recommended -->
+  <set xpath="/rwgmixer/world/@ruleset">Mediumish10</set>
+</config>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<ModInfo>
+		<Name value="DarknessFallsRWG" />
+		<Description value="Fixes biome gen for other sizes than 8k" />
+		<Author value="Mythix, thanks to Khaine for this great mod" />
+		<Version value="1.0" />
+		<Website value="" />
+	</ModInfo>
+</xml>
