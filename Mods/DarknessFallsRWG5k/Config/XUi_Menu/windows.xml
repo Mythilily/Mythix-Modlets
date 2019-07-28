@@ -1,0 +1,3 @@
+<config>
+  <set xpath="/windows/window[@name='worldGeneration']/rect[@pos='0,-50']/rect[@name='generationControls']/rect[@pos='8,-40']/combobox[@name='WorldSize]/@values'">5500</set>
+</config>
