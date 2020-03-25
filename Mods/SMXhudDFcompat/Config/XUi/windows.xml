@@ -1,0 +1,10 @@
+<configs>
+	<remove xpath="/windows/window[@name='SMXdayTimeFrame']/sprite[@pos='145,-75']/label[@name='SMXtime']"/>
+	<remove xpath="/windows/window[@name='windowToolbelt']/rect/grid[@name='SMXtoolbeltNumbers']"/>
+	<remove xpath="/windows/window[@name='HUDBuffPopout']"/>
+	<remove xpath="/windows/window[@name='DFToolbelt']"/>
+	<remove xpath="/windows/window[@name='DFXpBar']"/>
+	<set xpath="/windows/window[@name='SMXtimeFrame']/sprite[@depth='5']/label[@name='SMXdayTime']/@text">{day}</set>
+	<set xpath="/windows/window[@name='windowToolbelt']/rect/grid[@name='SMXtoolbelt']/@pos">-432,20</set>
+	<set xpath="/windows/window[@name='windowToolbelt']/rect/grid[@name='SMXtoolbelt']/@cols">10</set>
+</configs>

@@ -1,0 +1,3 @@
+<configs>
+	<remove xpath="/controls/df_backpack_item_stack"/>
+</configs>

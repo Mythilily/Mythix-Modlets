@@ -1,0 +1,6 @@
+<configs>
+	<remove xpath="/xui/ruleset/window_group[@name='toolbelt']/window[@name='DFXpBar']"/>
+	<remove xpath="/xui/ruleset/window_group[@name='toolbelt']/window[@name='HUDBuffPopout']"/>
+	<set xpath="/xui/ruleset/window_group[@name='toolbelt']/window[@name='HUDLeftStatBars']/@anchor">LeftBottom</set>
+	<set xpath="/xui/ruleset/window_group[@name='toolbelt']/window[@name='DFToolbelt']/@name">windowToolbelt</set>
+</configs>

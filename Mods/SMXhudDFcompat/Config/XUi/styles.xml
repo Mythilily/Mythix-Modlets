@@ -1,0 +1,11 @@
+<configs>
+	<remove xpath="/styles/global/style_entry[@name='righttop']"/>
+	<remove xpath="/styles/global/style_entry[@name='bottomleft']"/>
+	<remove xpath="/styles/global/style_entry[@name='bottomcenter']"/>
+	<remove xpath="/styles/global/style_entry[@name='bottomright']"/>
+	<remove xpath="/styles/global/style_entry[@name='tooltipbottom']"/>
+	<remove xpath="/styles/global/style_entry[@name='hudleft']"/>
+	<remove xpath="/styles/global/style_entry[@name='hudcenter']"/>
+	<remove xpath="/styles/global/style_entry[@name='hudright']"/>
+	<remove xpath="/styles/style[@name='compass.window.newbackground']"/>
+</configs>

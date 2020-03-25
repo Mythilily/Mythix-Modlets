@@ -1,0 +1,12 @@
+<mod>
+	<info>
+		<author>Mythix</author>
+		<name>SMXhudDFcompat</name>
+		<description>DF Compatibility patch</description>
+		<mod_version>1</mod_version>
+		<game_version>18.4</game_version>
+		<launcher_version>0.0.0</launcher_version>
+	</info>
+	<dependencies>
+	</dependencies>
+</mod>
