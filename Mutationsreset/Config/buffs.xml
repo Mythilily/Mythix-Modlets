@@ -1,0 +1,18 @@
+<configs>
+  <append xpath="/buffs[1]">
+    <buff name="buffresettechskills" hidden="true">
+  		<stack_type value="ignore"/>
+  		<duration value="1"/>
+  		<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$techboosts" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$bioboosts" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifySkillSDX, Mods" tag="perkPhysicalConditioning" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifySkillSDX, Mods" tag="perkOxygenOptimization" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifySkillSDX, Mods" tag="perkAcceleratedHealing" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifySkillSDX, Mods" tag="perkBulletSponge" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifySkillSDX, Mods" tag="perkGottaGoFast" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifySkillSDX, Mods" tag="perkEnhancedImmuneSystem" operation="set" value="0"/>
+  		</effect_group>
+  	</buff>
+  </append>
+</configs>

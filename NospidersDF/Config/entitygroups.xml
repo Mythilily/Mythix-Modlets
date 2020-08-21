@@ -1,0 +1,5 @@
+<configs>
+  <set xpath="//entity[@name='animalSpider']/@name">zombieSpider</set>
+  <set xpath="//entity[@name='animalSpider02']/@name">zombieSpiderFeral</set>
+  <set xpath="//entity[@name='animalSpider03']/@name">zombieSpiderRadiated</set>
+</configs>
