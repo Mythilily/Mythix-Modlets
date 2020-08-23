@@ -1,0 +1,3 @@
+<configs>
+  <set xpath="//property[@name='OneBlockCrouch']/@value">false</set>
+</configs>
