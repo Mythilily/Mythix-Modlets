@@ -1,0 +1,43 @@
+<configs>
+<!-- Caitlin -->
+	<set xpath="//trader_info[@id='2']/@min_inventory">25</set>
+	<set xpath="//trader_info[@id='2']/@max_inventory">100</set>
+	<set xpath="//trader_info[@id='2']/@min_items_swapped">50</set>
+	<set xpath="//trader_info[@id='2']/@max_items_swapped">75</set>
+	<remove xpath="//item[@group='laserstuffcaitlin']"/>
+<!-- Wandering trader -->
+	<set xpath="//trader_info[@id='6']/@min_inventory">5</set>
+	<set xpath="//trader_info[@id='6']/@max_inventory">20</set>
+	<set xpath="//trader_info[@id='6']/@min_items_swapped">10</set>
+	<set xpath="//trader_info[@id='6']/@max_items_swapped">15</set>
+<!-- Wandering trader -->
+	<set xpath="//trader_info[@id='7']/@min_inventory">20</set>
+	<set xpath="//trader_info[@id='7']/@max_inventory">30</set>
+	<set xpath="//trader_info[@id='7']/@min_items_swapped">20</set>
+	<set xpath="//trader_info[@id='7']/@max_items_swapped">25</set>
+<!-- Rekt -->
+	<set xpath="//trader_info[@id='9']/@min_inventory">20</set>
+	<set xpath="//trader_info[@id='9']/@max_inventory">50</set>
+	<set xpath="//trader_info[@id='9']/@min_items_swapped">20</set>
+	<set xpath="//trader_info[@id='9']/@max_items_swapped">30</set>
+<!-- Hugh -->
+	<set xpath="//trader_info[@id='10']/@min_inventory">20</set>
+	<set xpath="//trader_info[@id='10']/@max_inventory">50</set>
+	<set xpath="//trader_info[@id='10']/@min_items_swapped">20</set>
+	<set xpath="//trader_info[@id='10']/@max_items_swapped">30</set>
+<!-- Jen -->
+	<set xpath="//trader_info[@id='11']/@min_inventory">20</set>
+	<set xpath="//trader_info[@id='11']/@max_inventory">50</set>
+	<set xpath="//trader_info[@id='11']/@min_items_swapped">20</set>
+	<set xpath="//trader_info[@id='11']/@max_items_swapped">30</set>
+<!-- Bob -->
+	<set xpath="//trader_info[@id='12']/@min_inventory">20</set>
+	<set xpath="//trader_info[@id='12']/@max_inventory">50</set>
+	<set xpath="//trader_info[@id='12']/@min_items_swapped">20</set>
+	<set xpath="//trader_info[@id='12']/@max_items_swapped">30</set>
+<!-- Joel -->
+	<set xpath="//trader_info[@id='13']/@min_inventory">20</set>
+	<set xpath="//trader_info[@id='13']/@max_inventory">50</set>
+	<set xpath="//trader_info[@id='13']/@min_items_swapped">20</set>
+	<set xpath="//trader_info[@id='13']/@max_items_swapped">30</set>
+</configs>

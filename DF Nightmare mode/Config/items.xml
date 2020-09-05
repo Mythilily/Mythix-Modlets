@@ -1,0 +1,268 @@
+<configs>
+  <set xpath="//item[@name='DFpistolParts']/property[@name='EconomicValue']/@value">70</set>
+  <set xpath="//item[@name='DFpistolBarrel']/property[@name='EconomicValue']/@value">70</set>
+  <set xpath="//item[@name='DFpistolGrip']/property[@name='EconomicValue']/@value">70</set>
+  <set xpath="//item[@name='DFpistolFrame']/property[@name='EconomicValue']/@value">105</set>
+  <set xpath="//item[@name='DFP225Frame']/property[@name='EconomicValue']/@value">210</set>
+  <set xpath="//item[@name='DFDEagleFrame']/property[@name='EconomicValue']/@value">210</set>
+  <set xpath="//item[@name='DFmagnumFrame']/property[@name='EconomicValue']/@value">135</set>
+
+  <set xpath="//item[@name='DFrifleParts']/property[@name='EconomicValue']/@value">105</set>
+  <set xpath="//item[@name='DFrifleBarrel']/property[@name='EconomicValue']/@value">105</set>
+  <set xpath="//item[@name='DFrifleStock']/property[@name='EconomicValue']/@value">105</set>
+  <set xpath="//item[@name='DFhuntingRifleReceiver']/property[@name='EconomicValue']/@value">150</set>
+  <set xpath="//item[@name='DFwinchesterRifleReceiver']/property[@name='EconomicValue']/@value">300</set>
+  <set xpath="//item[@name='DFsniperRifleReceiver']/property[@name='EconomicValue']/@value">150</set>
+
+  <set xpath="//item[@name='DFautoRifleParts']/property[@name='EconomicValue']/@value">140</set>
+  <set xpath="//item[@name='DFautoRifleBarrel']/property[@name='EconomicValue']/@value">140</set>
+  <set xpath="//item[@name='DFautoRifleStock']/property[@name='EconomicValue']/@value">140</set>
+  <set xpath="//item[@name='DFAK47Receiver']/property[@name='EconomicValue']/@value">210</set>
+  <set xpath="//item[@name='DFM60Receiver']/property[@name='EconomicValue']/@value">420</set>
+  <set xpath="//item[@name='DFAR15Receiver']/property[@name='EconomicValue']/@value">315</set>
+  <set xpath="//item[@name='DFM4A1Receiver']/property[@name='EconomicValue']/@value">420</set>
+
+  <set xpath="//item[@name='DFshotgunParts']/property[@name='EconomicValue']/@value">105</set>
+  <set xpath="//item[@name='DFshotgunBarrel']/property[@name='EconomicValue']/@value">105</set>
+  <set xpath="//item[@name='DFshotgunStock']/property[@name='EconomicValue']/@value">105</set>
+  <set xpath="//item[@name='DFshotgunReceiver']/property[@name='EconomicValue']/@value">150</set>
+  <set xpath="//item[@name='DFautoShotgunReceiver']/property[@name='EconomicValue']/@value">300</set>
+
+  <append xpath="//item[starts-with(@name, 'DFgunCoil')]/effect_group[@name='Base Effects']">
+		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffCoil">
+			<requirement name="EntityTagCompare" target="other" tags="legendary"/>
+		</triggered_effect>
+  </append>
+  <append xpath="//passive_effect[@name='TargetArmor' and starts-with(@value, '-.')]">
+		<requirement name="!EntityTagCompare" target="other" tags="legendary"/>
+  </append>
+
+  <append xpath="//item[contains(@name, 'andDemon')]/property[@class='Action0']/property[@name='Buff']/@value">,buffInfernoTrigger</append>
+  <append xpath="//item[contains(@name, 'andDemon')]/property[@class='Action0']/property[@name='Buff_chance']/@value">,0.5</append>
+  <append xpath="//item[contains(@name, 'andDemon')]/effect_group">
+		<passive_effect name="BuffProcChance" operation="base_set" value=".50" tags="buffInfernoTrigger"/>
+  </append>
+<!-- Dev -->
+
+  <append xpath="/items">
+    <item name="challengeQuestUnknownMaster">
+      <property name="Extends" value="questMaster"/>
+      <property name="CreativeMode" value="None"/>
+      <property name="DescriptionKey" value="qc_Unknowndesc"/>
+      <property name="CustomIcon" value="challengeQuestMaster"/>
+      <property name="CustomIconTint" value="150,0,0"/>
+      <property name="EconomicValue" value="400"/>
+    </item>
+    <item name="qc_Unknown1">
+      <property name="Extends" value="challengeQuestUnknownMaster"/>
+      <property class="Action0">
+        <property name="UseAnimation" value="false"/>
+        <property name="QuestGiven" value="challenge_unknown1"/>
+      </property>
+    </item>
+    <item name="qc_Unknown2">
+      <property name="Extends" value="challengeQuestUnknownMaster"/>
+      <property class="Action0">
+        <property name="UseAnimation" value="false"/>
+        <property name="QuestGiven" value="challenge_unknown2"/>
+      </property>
+    </item>
+    <item name="qc_Unknown3">
+      <property name="Extends" value="challengeQuestUnknownMaster"/>
+      <property class="Action0">
+        <property name="UseAnimation" value="false"/>
+        <property name="QuestGiven" value="challenge_unknown3"/>
+      </property>
+    </item>
+    <item name="questToken">
+      <property name="CustomIcon" value="resourcePaper" />
+      <property name="CustomIconTint" value="150,0,0"/>
+      <property name="HoldType" value="45"/>
+      <property name="Tags" value="junk"/>
+      <property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
+      <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+      <property name="Material" value="MresourcePaper"/>
+      <property name="Stacknumber" value="500"/>
+      <property name="FuelValue" value="1"/>
+      <property name="Weight" value="1"/>
+      <property name="EconomicValue" value="10"/>
+      <property name="EconomicBundleSize" value="10"/>
+      <property name="Group" value="Resources"/>
+    </item>
+    <item name="DFskillAthleticsBookDEV">
+      <property name="CustomIcon" value="skillAthletics" />
+      <property name="CustomIconTint" value="86,255,109"/>
+      <property name="Extends" value="DFskillAthleticsBook"/>
+      <property class="Action0">
+        <property name="Class" value="GainSkill"/>
+        <property name="Skills_to_gain" value="perkASAthletics,perkASAthletics,perkASAthletics,perkASAthletics,perkASAthletics,perkASAthletics,perkASAthletics,perkASAthletics,perkASAthletics,perkASAthletics,perkASAthletics,perkASAthletics,perkASAthletics,perkASAthletics,perkASAthletics,perkASAthletics,perkASAthletics,perkASAthletics,perkASAthletics,perkASAthletics"/>
+      </property>
+    </item>
+    <item name="DFskillMiningBookDEV">
+      <property name="CustomIcon" value="bookArtOfMiningLuckyStrike" />
+      <property name="CustomIconTint" value="86,255,109"/>
+      <property name="Extends" value="DFskillMiningBook"/>
+        <property class="Action0">
+        <property name="Class" value="GainSkill"/>
+        <property name="Skills_to_gain" value="perkASMiningTools,perkASMiningTools,perkASMiningTools,perkASMiningTools,perkASMiningTools,perkASMiningTools,perkASMiningTools,perkASMiningTools,perkASMiningTools,perkASMiningTools,perkASMiningTools,perkASMiningTools,perkASMiningTools,perkASMiningTools,perkASMiningTools,perkASMiningTools,perkASMiningTools,perkASMiningTools,perkASMiningTools,perkASMiningTools"/>
+      </property>
+    </item>
+    <item name="DFskillScavengingBookDEV">
+      <property name="CustomIcon" value="bookWasteTreasuresHoney" />
+      <property name="CustomIconTint" value="86,255,109"/>
+      <property name="Extends" value="DFskillScavengingBook"/>
+        <property class="Action0">
+        <property name="Class" value="GainSkill"/>
+        <property name="Skills_to_gain" value="perkASScavenging,perkASScavenging,perkASScavenging,perkASScavenging,perkASScavenging,perkASScavenging,perkASScavenging,perkASScavenging,perkASScavenging,perkASScavenging,perkASScavenging,perkASScavenging,perkASScavenging,perkASScavenging,perkASScavenging,perkASScavenging,perkASScavenging,perkASScavenging,perkASScavenging,perkASScavenging"/>
+      </property>
+    </item>
+    <item name="DFskillArcheryBookDEV">
+      <property name="CustomIcon" value="bookRangersArrowRecovery" />
+      <property name="CustomIconTint" value="86,255,109"/>
+      <property name="Extends" value="DFskillArcheryBook"/>
+        <property class="Action0">
+        <property name="Class" value="GainSkill"/>
+        <property name="Skills_to_gain" value="perkASArchery,perkASArchery,perkASArchery,perkASArchery,perkASArchery,perkASArchery,perkASArchery,perkASArchery,perkASArchery,perkASArchery,perkASArchery,perkASArchery,perkASArchery,perkASArchery,perkASArchery,perkASArchery,perkASArchery,perkASArchery,perkASArchery,perkASArchery"/>
+      </property>
+    </item>
+    <item name="DFskillAutomaticsBookDEV">
+      <property name="CustomIcon" value="bookAutoWeaponsDamage" />
+      <property name="CustomIconTint" value="86,255,109"/>
+      <property name="Extends" value="DFskillAutomaticsBook"/>
+        <property class="Action0">
+        <property name="Class" value="GainSkill"/>
+        <property name="Skills_to_gain" value="perkASAutomatics,perkASAutomatics,perkASAutomatics,perkASAutomatics,perkASAutomatics,perkASAutomatics,perkASAutomatics,perkASAutomatics,perkASAutomatics,perkASAutomatics,perkASAutomatics,perkASAutomatics,perkASAutomatics,perkASAutomatics,perkASAutomatics,perkASAutomatics,perkASAutomatics,perkASAutomatics,perkASAutomatics,perkASAutomatics"/>
+      </property>
+    </item>
+    <item name="DFskillBluntBookDEV">
+    	<property name="CustomIcon" value="bookBatterUpBigHits" />
+      <property name="CustomIconTint" value="86,255,109"/>
+      <property name="Extends" value="DFskillBluntBook"/>
+        <property class="Action0">
+        <property name="Class" value="GainSkill"/>
+        <property name="Skills_to_gain" value="perkASBlunt,perkASBlunt,perkASBlunt,perkASBlunt,perkASBlunt,perkASBlunt,perkASBlunt,perkASBlunt,perkASBlunt,perkASBlunt,perkASBlunt,perkASBlunt,perkASBlunt,perkASBlunt,perkASBlunt,perkASBlunt,perkASBlunt,perkASBlunt,perkASBlunt,perkASBlunt"/>
+      </property>
+    </item>
+    <item name="DFskillBladesBookDEV">
+      <property name="CustomIcon" value="bookUrbanCombatLanding" />
+      <property name="CustomIconTint" value="86,255,109"/>
+      <property name="Extends" value="DFskillBladesBook"/>
+        <property class="Action0">
+        <property name="Class" value="GainSkill"/>
+        <property name="Skills_to_gain" value="perkASBladed,perkASBladed,perkASBladed,perkASBladed,perkASBladed,perkASBladed,perkASBladed,perkASBladed,perkASBladed,perkASBladed,perkASBladed,perkASBladed,perkASBladed,perkASBladed,perkASBladed,perkASBladed,perkASBladed,perkASBladed,perkASBladed,perkASBladed"/>
+      </property>
+    </item>
+    <item name="DFskillPistolBookDEV">
+      <property name="CustomIcon" value="bookPistolPeteTakeAim" />
+      <property name="CustomIconTint" value="86,255,109"/>
+      <property name="Extends" value="DFskillPistolBook"/>
+        <property class="Action0">
+        <property name="Class" value="GainSkill"/>
+        <property name="Skills_to_gain" value="perkASPistols,perkASPistols,perkASPistols,perkASPistols,perkASPistols,perkASPistols,perkASPistols,perkASPistols,perkASPistols,perkASPistols,perkASPistols,perkASPistols,perkASPistols,perkASPistols,perkASPistols,perkASPistols,perkASPistols,perkASPistols,perkASPistols,perkASPistols"/>
+      </property>
+    </item>
+    <item name="DFskillShotgunBookDEV">
+      <property name="CustomIcon" value="bookShotgunMessiahDamage" />
+      <property name="CustomIconTint" value="86,255,109"/>
+      <property name="Extends" value="DFskillShotgunBook"/>
+        <property class="Action0">
+        <property name="Class" value="GainSkill"/>
+        <property name="Skills_to_gain" value="perkASShotguns,perkASShotguns,perkASShotguns,perkASShotguns,perkASShotguns,perkASShotguns,perkASShotguns,perkASShotguns,perkASShotguns,perkASShotguns,perkASShotguns,perkASShotguns,perkASShotguns,perkASShotguns,perkASShotguns,perkASShotguns,perkASShotguns,perkASShotguns,perkASShotguns,perkASShotguns"/>
+      </property>
+    </item>
+    <item name="DFskillRiflesBookDEV">
+      <property name="CustomIcon" value="bookSniperDamage" />
+      <property name="CustomIconTint" value="86,255,109"/>
+      <property name="Extends" value="DFskillRiflesBook"/>
+        <property class="Action0">
+        <property name="Class" value="GainSkill"/>
+        <property name="Skills_to_gain" value="perkASRifles,perkASRifles,perkASRifles,perkASRifles,perkASRifles,perkASRifles,perkASRifles,perkASRifles,perkASRifles,perkASRifles,perkASRifles,perkASRifles,perkASRifles,perkASRifles,perkASRifles,perkASRifles,perkASRifles,perkASRifles,perkASRifles,perkASRifles"/>
+      </property>
+    </item>
+    <item name="devskillpts">
+      <property name="CustomIcon" value="skillGeneric" />
+      <property name="CustomIconTint" value="86,255,109"/>
+      <property name="Extends" value="DFskillGenericBook"/>
+      <property class="Action0">
+        <property name="Class" value="Quest"/>
+        <property name="QuestGiven" value="quest_skillpts"/>
+        <property name="Delay" value="0"/>
+      </property>
+    </item>
+    <item name="Devluckygoggles50">
+      <property name="CustomIcon" value="apparelAviatorGoggles" />
+      <property name="CustomIconTint" value="86,255,109"/>
+      <property name="Extends" value="apparelAviatorGoggles"/>
+      <effect_group tiered="false">
+        <passive_effect name="LootGamestage" operation="base_add" value="50"/>
+      </effect_group>
+    </item>
+    <item name="Devluckygoggles100">
+      <property name="CustomIcon" value="apparelAviatorGoggles" />
+      <property name="CustomIconTint" value="86,255,109"/>
+      <property name="Extends" value="apparelAviatorGoggles"/>
+      <effect_group tiered="false">
+        <passive_effect name="LootGamestage" operation="base_add" value="100"/>
+      </effect_group>
+    </item>
+    <item name="Devluckygoggles200">
+      <property name="CustomIcon" value="apparelAviatorGoggles" />
+      <property name="CustomIconTint" value="86,255,109"/>
+      <property name="Extends" value="apparelAviatorGoggles"/>
+      <effect_group tiered="false">
+        <passive_effect name="LootGamestage" operation="base_add" value="200"/>
+      </effect_group>
+    </item>
+    <item name="Devluckygoggles300">
+      <property name="CustomIcon" value="apparelAviatorGoggles" />
+      <property name="CustomIconTint" value="86,255,109"/>
+      <property name="Extends" value="apparelAviatorGoggles"/>
+      <effect_group tiered="false">
+        <passive_effect name="LootGamestage" operation="base_add" value="300"/>
+      </effect_group>
+    </item>
+    <item name="Devluckygoggles400">
+      <property name="CustomIcon" value="apparelAviatorGoggles" />
+      <property name="CustomIconTint" value="86,255,109"/>
+      <property name="Extends" value="apparelAviatorGoggles"/>
+      <effect_group tiered="false">
+        <passive_effect name="LootGamestage" operation="base_add" value="400"/>
+      </effect_group>
+    </item>
+    <item name="Devluckygoggles500">
+      <property name="CustomIcon" value="apparelAviatorGoggles" />
+      <property name="CustomIconTint" value="86,255,109"/>
+      <property name="Extends" value="apparelAviatorGoggles"/>
+      <effect_group tiered="false">
+        <passive_effect name="LootGamestage" operation="base_add" value="500"/>
+      </effect_group>
+    </item>
+    <item name="Devluckygoggles750">
+      <property name="CustomIcon" value="apparelAviatorGoggles" />
+      <property name="CustomIconTint" value="86,255,109"/>
+      <property name="Extends" value="apparelAviatorGoggles"/>
+      <effect_group tiered="false">
+        <passive_effect name="LootGamestage" operation="base_add" value="750"/>
+      </effect_group>
+    </item>
+    <item name="Devluckygoggles1000">
+      <property name="CustomIcon" value="apparelAviatorGoggles" />
+      <property name="CustomIconTint" value="86,255,109"/>
+      <property name="Extends" value="apparelAviatorGoggles"/>
+      <effect_group tiered="false">
+        <passive_effect name="LootGamestage" operation="base_add" value="1000"/>
+      </effect_group>
+    </item>
+  <item name="DevQuestrewards">
+    <property name="Extends" value="apparelBandana"/>
+    <property name="CustomIcon" value="apparelBandana"/> <property name="CustomIconTint" value="86,255,109"/>
+    <property name="DescriptionKey" value="DevQuestrewardsdesc"/>
+    <property class="UMA">
+      <property name="Overlay0Tint" value="86,255,109"/>
+    </property>
+    <effect_group tiered="false">
+      <passive_effect name="QuestRewardOptionCount" operation="base_add" value="3"/>
+    </effect_group>
+  </item>
+  </append>
+</configs>

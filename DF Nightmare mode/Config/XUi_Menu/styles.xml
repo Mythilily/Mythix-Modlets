@@ -1,0 +1,5 @@
+<configs>
+  <append xpath="//global[1]">
+    <style_entry name="darkRed" value="150,0,0"/>
+  </append>
+</configs>

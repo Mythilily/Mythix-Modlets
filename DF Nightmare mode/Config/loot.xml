@@ -1,0 +1,48 @@
+<configs>
+  <insertBefore xpath="//lootcontainer[@id='1']">
+    <lootgroup name="LootContainerBossQuest">
+      <item group="booksNoFiller" prob="2.5"/>
+      <item name="resourceForgedSteel" count="6,15" prob="1.25"/>
+      <item group="rareTools" prob=".2"/>
+      <item group="groupArmorScaled" prob="3.75"/>
+      <item name="armorSwatHelmet" mods="modArmorHelmetLight" mod_chance=".8" prob="2.5"/>
+      <item group="groupApparelHazmat" prob="1.25"/>
+      <item group="groupAmmoRegular" count="3" prob="8"/>
+      <item group="groupWeaponsScaled" prob="14"/>
+      <item name="apparelNightvisionGoggles" loot_prob_template="probTemplate1.0"/>
+      <item name="oldCash" count="500,900" prob="2.5"/>
+      <item group="rareMedicine" count="1,2" prob="0.75"/>
+      <item name="drugVitamins" count="2,3" prob="1.75"/>
+      <item name="drugSteroids" count="2,3" prob="1.75"/>
+      <item group="groupTreasureMaps" prob="0.25"/>
+      <item group="groupQuestChallenge" prob="0.25"/>
+      <item group="groupModAllScaled" prob="1"/>
+      <item group="vehicleParts" loot_prob_template="probTemplate1.0"/>
+    </lootgroup>
+  </insertBefore>
+  <insertAfter xpath="//lootgroup[@name='empty']">
+    <lootgroup name="unknownquests">
+      <item name="qc_Unknown1"/>
+      <item name="qc_Unknown2" prob="0.8"/>
+    </lootgroup>
+  </insertAfter>
+  <append xpath="//lootgroup[@name='rareBooks']">
+    <item group="unknownquests" prob="0.75"/>
+  </append>
+  <append xpath="/lootcontainers">
+    <lootcontainer id="200" count="2,5" size="6,4" sound_open="UseActions/open_cardboard" sound_close="UseActions/close_cardboard" loot_quality_template="qualBaseTemplate" buff="buffScavengingServerHack,buffScavengingSkillXPTick">
+	    <item group="groupBuriedWeaponChest"/>
+      <!-- <item name="resourcePaper" count="2,8" prob="1"/>
+      <item name="resourceScrapPolymers" count="2,8" prob="0.33"/>
+      <item name="resourceAcid" count="1,2" prob=".1"/>
+      <item name="drinkJarYuccaJuice" count="1,2" prob="0.05"/>
+      <item name="meleeToolAxeT1IronFireaxe" prob="1"/>
+      <item name="meleeToolAxeT2SteelAxe" prob="0.5"/>
+      <item name="gunHandgunT1Pistol" prob="1"/>
+      <item name="gunHandgunT3DesertVulture" prob="0.5"/> -->
+    </lootcontainer>
+    <lootcontainer id="201" count="1" size="6,4" sound_open="UseActions/open_cardboard" sound_close="UseActions/close_cardboard" loot_quality_template="qualBaseTemplate" buff="buffScavengingServerHack,buffScavengingSkillXPTick">
+	    <item name="questToken" count="1"/>
+    </lootcontainer>
+  </append>
+</configs>

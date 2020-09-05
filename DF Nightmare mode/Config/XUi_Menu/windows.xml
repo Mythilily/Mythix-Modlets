@@ -1,0 +1,10 @@
+<configs>
+  <!-- <append xpath="/windows">
+		<window name="Nightmaremode" depth="100" pos="0, 0" width="300" height="150" anchor="RightTop">
+			<texture name="Nightmaremode" pos="-225, 0" width="300" height="150" texture="@modfolder:UI/nightmaremode.png" />
+		</window>
+  </append> -->
+  <append xpath="//window[@name='mainMenuLogo']">
+		<label name="Nightmaremode" pos="205, 140" depth="0" size="250,33" text="Nightmare EXP v1.0" font_size="42" effect="outline" color="[darkRed]" justify="center" />
+  </append>
+</configs>

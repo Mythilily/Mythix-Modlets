@@ -1,0 +1,14 @@
+<configs>
+  <append xpath="/entitygroups">
+	<entitygroup name="Lootcratehero">
+		<entity name="zombieFatCop"/>
+	</entitygroup>
+  	<entitygroup name="SmallBunkerLabMu">
+		<entity name="zombieWightFeral" prob="0.75"/>
+		<entity name="zombieWightRadiated"/>
+		<entity name="legendaryZombieLab" />
+		<entity name="zombieLabRadiated" prob="0.5"/>
+    	<entity name="DFzombieBehemoth" prob="0.25"/>
+	</entitygroup>
+  </append>
+</configs>

@@ -1,0 +1,143 @@
+<configs>
+	<append xpath="/buffs[1]">
+		<buff name="AlarmOn3" hidden="true" icon="ui_game_symbol_medical"> 
+			<stack_type value="effect"/>
+			<duration value="1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="carAlarm1" />
+				<triggered_effect trigger="onSelfBuffRemove" action="FadeOutSound" target="self" sound="carAlarm1" />
+				<triggered_effect trigger="onSelfLeaveGame" action="StopSound" target="self" sound="carAlarm1" />
+				<triggered_effect trigger="onSelfBuffFinish" action="FadeOutSound" target="self" sound="carAlarm1"/>
+			</effect_group>
+		</buff>
+		<buff name="buffResetMutations" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value="1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$techboosts" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$bioboosts" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifySkillSDX, Mods" tag="perkPhysicalConditioning" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifySkillSDX, Mods" tag="perkOxygenOptimization" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifySkillSDX, Mods" tag="perkAcceleratedHealing" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifySkillSDX, Mods" tag="perkBulletSponge" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifySkillSDX, Mods" tag="perkGottaGoFast" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifySkillSDX, Mods" tag="perkEnhancedImmuneSystem" operation="set" value="0"/>
+			</effect_group>
+		</buff>
+		<buff name="buffInfernoTrigger" icon="ui_game_symbol_fire" hidden="true">
+			<damage_type value="heat"/>
+			<update_rate value="1"/>
+			<stack_type value="replace"/>
+			<duration value="1"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".buffInfernoDisplay" operation="set" value="10"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffInferno"/>
+			</effect_group>
+		</buff>
+		<buff name="buffInferno" name_key="buffInfernoName" description_key="buffInfernoDesc" tooltip_key="buffInfernoTooltip" icon="ui_game_symbol_fire" icon_color="120,0,230" icon_blink="true">
+			<damage_type value="heat"/>
+			<update_rate value="1"/>
+			<stack_type value="replace"/>
+			<duration value="10"/>
+			<display_value value=".buffInfernoDisplay"/><display_value_format value="time"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".buffInfernoDisplay" operation="set" value="10"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffInfernoDisplay" operation="subtract" value="1"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="HealthChangeOT" operation="base_subtract" duration="0,10" value="0,25"/>
+				<passive_effect name="WaterChangeOT" operation="base_subtract" value="5"/>
+				<passive_effect name="HypothermalResist" operation="base_add" value="50"/>
+				<passive_effect name="HyperthermalResist" operation="base_add" value="-25"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_onFire" local_offset="0,-.2,0" parent_transform="LOD0" uses_mesh_renderer="true"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="p_onFire" local_offset="0,-.2,0" parent_transform="LOD0" uses_mesh_renderer="true"/>
+
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="p_onFire"/>
+				<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_onFire"/>
+			</effect_group>
+		</buff>
+		<buff name="buffColdDemon" hidden="true">
+			<damage_type value="heat"/>
+			<stack_type value="ignore"/>
+			<duration value="30"/>
+			<effect_group>
+				<requirement name="EntityTagCompare" target="self" tags="demon"/>
+				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffIsColdAF"/>
+
+				<passive_effect name="HealthChangeOT" operation="base_subtract" duration="0,12.5,30" value="10,50,500"/>
+				<passive_effect name="WaterChangeOT" operation="base_subtract" duration="0,12.5,30" value="10,50,500"/>
+				<passive_effect name="HypothermalResist" operation="base_add" value="-20"/>
+				<passive_effect name="HyperthermalResist" operation="base_add" value="60"/>
+			</effect_group>
+		</buff>
+		<buff name="buffEmitRadiation">
+			<stack_type value="replace"/>
+			<update_rate value="3"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="5" buff="buffRadiationWeak">
+					<requirement name="EntityTagCompare" target="other" tags="player"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+
+		<buff name="buffCoil" name_key="buffCoilName" icon="ui_game_symbol_radiation" icon_color="255,255,225" hidden="true">
+			<stack_type value="replace"/>
+			<duration value="10"/>
+			<effect_group>
+				<requirements>
+					<requirement name="EntityTagCompare" target="self" tags="legendary"/>
+					<requirement name="CVarCompare" cvar=".coilShredCounter" operation="LT" value=".7"/>
+				</requirements>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".coilShredCounter" operation="set" value=".1"/>
+				<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".coilShredCounter" operation="add" value=".1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".coilShredCounter" operation="set" value="0"/>
+				<passive_effect name="PhysicalDamageResist" operation="perc_subtract" value="@.coilShredCounter"/>
+			</effect_group>
+		</buff>
+		<buff name="buffArmorShreddingAuto" name_key="buffArmorShreddingName" description_key="buffArmorShreddingDesc" tooltip_key="buffArmorShreddingTooltip" icon="ui_game_symbol_armor_iron" icon_color="255,128,0">
+			<stack_type value="replace"/>
+			<duration value="10"/>
+			<effect_group>
+				<requirement name="CVarCompare" cvar=".ArmorShreddingCounter" operation="LT" value=".4"/>
+					<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffArmorShreddingAuto"/>
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".ArmorShreddingCounter" operation="set" value=".025"/>
+					<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".ArmorShreddingCounter" operation="add" value=".025"/>
+					<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".ArmorShreddingCounter" operation="set" value="0"/>
+					<passive_effect name="PhysicalDamageResist" operation="perc_subtract" value="@.ArmorShreddingCounter"/>
+			</effect_group>
+		</buff>
+		<buff name="buffArmorShreddingPistol" name_key="buffArmorShreddingName" description_key="buffArmorShreddingDesc" tooltip_key="buffArmorShreddingTooltip" icon="ui_game_symbol_armor_iron" icon_color="255,128,0">
+			<stack_type value="replace"/>
+			<duration value="10"/>
+			<effect_group>
+				<requirement name="CVarCompare" cvar=".ArmorShreddingCounter" operation="LT" value=".4"/>
+					<passive_effect name="BuffBlink" operation="base_set" value="2" duration="0,3" tags="buffArmorShreddingPistol"/>
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".ArmorShreddingCounter" operation="set" value=".05"/>
+					<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".ArmorShreddingCounter" operation="add" value=".05"/>
+					<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".ArmorShreddingCounter" operation="set" value="0"/>
+					<passive_effect name="PhysicalDamageResist" operation="perc_subtract" value="@.ArmorShreddingCounter"/>
+			</effect_group>
+		</buff>
+	</append>
+	<append xpath="//buff[@name='buffArmorShredding']/effect_group/triggered_effect[@trigger='onSelfBuffStack']">
+		<requirement name="CVarCompare" cvar=".ArmorShreddingCounter" operation="LT" value=".4"/>
+	</append>
+	<set xpath="//buff[@name='buffArmorShredding']/effect_group/requirement[@cvar='$ArmorShreddingCounter']/@operation">LT</set>
+	<set xpath="//buff[@name='buffArmorShredding']/effect_group/requirement[@cvar='$ArmorShreddingCounter']/@value">.4</set>
+	<set xpath="//buff[@name='buffArmorShredding']/effect_group/triggered_effect[contains(@value, '.05')]/@value">.1</set>
+
+	<append xpath="//buff[@name='buffIsColdAF']/effect_group/requirements">
+		<requirement name="NotHasBuff" buff="buffColdDemon"/>
+	</append>
+	<set xpath="//buff[@name='buffIsColdAF']/duration/@value">0</set>
+	<set xpath="//buff[@name='buffZombieSpeed' or @name='buffZombieSpeedBoss']/effect_group/passive_effect[@operation='base_set']/@operation">perc_add</set>
+	<set xpath="//buff[@name='buffZombieSpeed']/effect_group/passive_effect[@name='WalkSpeed']/@value">4</set>
+	<set xpath="//buff[@name='buffZombieSpeed']/effect_group/passive_effect[@name='RunSpeed']/@value">2</set>
+	<set xpath="//buff[@name='buffZombieSpeedBoss']/effect_group/passive_effect[@name='WalkSpeed']/@value">8</set>
+	<set xpath="//buff[@name='buffZombieSpeedBoss']/effect_group/passive_effect[@name='RunSpeed']/@value">4</set>
+
+	<set xpath="//buff[@name='buffZombieStrengthBoss']/effect_group/passive_effect[@name='EntityDamage']/@value">0.75</set>
+	<set xpath="//buff[@name='buffBomberProtection']/effect_group/passive_effect[@name='PhysicalDamageResist']/@value">50</set>
+
+	<set xpath="//buff[@name='buffEncumberedInv']/effect_group/triggered_effect[@trigger='onSelfBuffUpdate' and @value='0.0095']/@value">0.075</set>
+</configs>

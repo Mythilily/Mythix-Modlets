@@ -1,0 +1,67 @@
+<configs>
+<!-- Perks quality "nerf" -->
+	<set xpath="//perk[starts-with(@name, 'perkCraft')]/*/passive_effect[@name='CraftingTier' and @level='1']/@value">5,10</set>
+	<set xpath="//perk[starts-with(@name, 'perkCraft')]/*/passive_effect[@name='CraftingTier' and @level='2']/@value">14,19</set>
+	<set xpath="//perk[starts-with(@name, 'perkCraft')]/*/passive_effect[@name='CraftingTier' and @level='3']/@value">22,27</set>
+	<set xpath="//perk[starts-with(@name, 'perkCraft')]/*/passive_effect[@name='CraftingTier' and @level='4']/@value">29,34</set>
+	<set xpath="//perk[starts-with(@name, 'perkCraft')]/*/passive_effect[@name='CraftingTier' and @level='5']/@value">35,40</set>
+<!-- specialization perks cost -->
+	<setattribute xpath="/progression/perks/perk[@name='perkCraftArmor']" name="cost_multiplier_per_level">1.3</setattribute>
+	<setattribute xpath="/progression/perks/perk[@name='perkCraftGuns']" name="cost_multiplier_per_level">1.3</setattribute>
+	<setattribute xpath="/progression/perks/perk[@name='perkCraftScience']" name="cost_multiplier_per_level">1.3</setattribute>
+	<setattribute xpath="/progression/perks/perk[@name='perkCraftTools']" name="cost_multiplier_per_level">1.3</setattribute>
+	<setattribute xpath="/progression/perks/perk[@name='perkCraftWeapons']" name="cost_multiplier_per_level">1.3</setattribute>
+
+	<setattribute xpath="/progression/perks/perk[@name='attFortitude']" name="cost_multiplier_per_level">1.3</setattribute>
+	<setattribute xpath="/progression/perks/perk[@name='perkQualityJoe']" name="cost_multiplier_per_level">1.3</setattribute>
+	<setattribute xpath="/progression/perks/perk[@name='perkPummelPete']" name="cost_multiplier_per_level">1.3</setattribute>
+	<setattribute xpath="/progression/perks/perk[@name='perkKnifeGuy']" name="cost_multiplier_per_level">1.3</setattribute>
+	<setattribute xpath="/progression/perks/perk[@name='perkMiner69r']" name="cost_multiplier_per_level">1.3</setattribute>
+	<setattribute xpath="/progression/perks/perk[@name='perkTheOutlaw']" name="cost_multiplier_per_level">1.3</setattribute>
+	<setattribute xpath="/progression/perks/perk[@name='perkBoomStick']" name="cost_multiplier_per_level">1.3</setattribute>
+	<setattribute xpath="/progression/perks/perk[@name='perkBetterLeadThanDead']" name="cost_multiplier_per_level">1.3</setattribute>
+	<setattribute xpath="/progression/perks/perk[@name='perkRobinHood']" name="cost_multiplier_per_level">1.3</setattribute>
+	<setattribute xpath="/progression/perks/perk[@name='perkThisIsMyRifle']" name="cost_multiplier_per_level">1.3</setattribute>
+
+	<setattribute xpath="/progression/perks/perk[@name='perkBetterBarter']" name="cost_multiplier_per_level">1.3</setattribute>
+	<setattribute xpath="/progression/perks/perk[@name='perkCharismaticNature']" name="cost_multiplier_per_level">1.25</setattribute>
+	<setattribute xpath="/progression/perks/perk[@name='perkTurrets']" name="cost_multiplier_per_level">1.25</setattribute>
+<!-- Laborer -->
+	<append xpath="/progression/perks/perk[@name='perkHammerForge']/level_requirements[@level='4']">
+	<requirement name="ProgressionLevel" progression_name="perkCraftTools" operation="GTE" value="2" desc_key="reqTools2"/>
+	<requirement name="ProgressionLevel" progression_name="perkCraftArmor" operation="GTE" value="2" desc_key="reqArmor2"/>
+	</append>
+	<append xpath="/progression/perks/perk[@name='perkHammerForge']/level_requirements[@level='5']">
+	<requirement name="ProgressionLevel" progression_name="perkASMiningTools" operation="GTE" value="50" desc_key="reqMiningTools50"/>
+	</append>
+<!-- Localization -->
+	<set xpath="//perk[@name='perkCraftArmor']/*/effect_description[@desc_key='perkCraftArmorRank1Desc']/@desc_key">perkCraftArmorRank1NmDesc</set>
+	<set xpath="//perk[@name='perkCraftArmor']/*/effect_description[@desc_key='perkCraftArmorRank2Desc']/@desc_key">perkCraftArmorRank1NmDesc</set>
+	<set xpath="//perk[@name='perkCraftArmor']/*/effect_description[@desc_key='perkCraftArmorRank3Desc']/@desc_key">perkCraftArmorRank1NmDesc</set>
+	<set xpath="//perk[@name='perkCraftArmor']/*/effect_description[@desc_key='perkCraftArmorRank4Desc']/@desc_key">perkCraftArmorRank1NmDesc</set>
+	<set xpath="//perk[@name='perkCraftArmor']/*/effect_description[@desc_key='perkCraftArmorRank5Desc']/@desc_key">perkCraftArmorRank1NmDesc</set>
+
+	<set xpath="//perk[@name='perkCraftGuns']/*/effect_description[@desc_key='perkCraftGunsRank1Desc']/@desc_key">perkCraftGunsRank1NmDesc</set>
+	<set xpath="//perk[@name='perkCraftGuns']/*/effect_description[@desc_key='perkCraftGunsRank2Desc']/@desc_key">perkCraftGunsRank2NmDesc</set>
+	<set xpath="//perk[@name='perkCraftGuns']/*/effect_description[@desc_key='perkCraftGunsRank3Desc']/@desc_key">perkCraftGunsRank3NmDesc</set>
+	<set xpath="//perk[@name='perkCraftGuns']/*/effect_description[@desc_key='perkCraftGunsRank4Desc']/@desc_key">perkCraftGunsRank4NmDesc</set>
+	<set xpath="//perk[@name='perkCraftGuns']/*/effect_description[@desc_key='perkCraftGunsRank5Desc']/@desc_key">perkCraftGunsRank5NmDesc</set>
+
+	<set xpath="//perk[@name='perkCraftScience']/*/effect_description[@desc_key='perkCraftScienceRank1Desc']/@desc_key">perkCraftScienceRank1NmDesc</set>
+	<set xpath="//perk[@name='perkCraftScience']/*/effect_description[@desc_key='perkCraftScienceRank2Desc']/@desc_key">perkCraftScienceRank2NmDesc</set>
+	<set xpath="//perk[@name='perkCraftScience']/*/effect_description[@desc_key='perkCraftScienceRank3Desc']/@desc_key">perkCraftScienceRank3NmDesc</set>
+	<set xpath="//perk[@name='perkCraftScience']/*/effect_description[@desc_key='perkCraftScienceRank4Desc']/@desc_key">perkCraftScienceRank4NmDesc</set>
+	<set xpath="//perk[@name='perkCraftScience']/*/effect_description[@desc_key='perkCraftScienceRank5Desc']/@desc_key">perkCraftScienceRank5NmDesc</set>
+
+	<set xpath="//perk[@name='perkCraftTools']/*/effect_description[@desc_key='perkCraftToolsRank1Desc']/@desc_key">perkCraftToolsRank1NmDesc</set>
+	<set xpath="//perk[@name='perkCraftTools']/*/effect_description[@desc_key='perkCraftToolsRank2Desc']/@desc_key">perkCraftToolsRank2NmDesc</set>
+	<set xpath="//perk[@name='perkCraftTools']/*/effect_description[@desc_key='perkCraftToolsRank3Desc']/@desc_key">perkCraftToolsRank3NmDesc</set>
+	<set xpath="//perk[@name='perkCraftTools']/*/effect_description[@desc_key='perkCraftToolsRank4Desc']/@desc_key">perkCraftToolsRank4NmDesc</set>
+	<set xpath="//perk[@name='perkCraftTools']/*/effect_description[@desc_key='perkCraftToolsRank5Desc']/@desc_key">perkCraftToolsRank5NmDesc</set>
+
+	<set xpath="//perk[@name='perkCraftWeapons']/*/effect_description[@desc_key='perkCraftWeaponsRank1Desc']/@desc_key">perkCraftWeaponsRank1NmDesc</set>
+	<set xpath="//perk[@name='perkCraftWeapons']/*/effect_description[@desc_key='perkCraftWeaponsRank2Desc']/@desc_key">perkCraftWeaponsRank2NmDesc</set>
+	<set xpath="//perk[@name='perkCraftWeapons']/*/effect_description[@desc_key='perkCraftWeaponsRank3Desc']/@desc_key">perkCraftWeaponsRank3NmDesc</set>
+	<set xpath="//perk[@name='perkCraftWeapons']/*/effect_description[@desc_key='perkCraftWeaponsRank4Desc']/@desc_key">perkCraftWeaponsRank4NmDesc</set>
+	<set xpath="//perk[@name='perkCraftWeapons']/*/effect_description[@desc_key='perkCraftWeaponsRank5Desc']/@desc_key">perkCraftWeaponsRank5NmDesc</set>
+</configs>

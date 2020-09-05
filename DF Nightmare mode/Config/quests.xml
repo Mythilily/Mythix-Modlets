@@ -1,0 +1,220 @@
+<configs>
+  <set xpath="//quest[@id='quest_BasicSurvival1']/reward[@id='quest_whiteRiverCitizen1']/@id">quest_BasicSurvival1a</set>
+  <append xpath="/quests">
+    <quest id="quest_skillpts">
+      <property name="name_key" value="quest_skillpoints200" />
+      <property name="subtitle_key" value="quest_skillpoints200_subtitle" />
+      <property name="description_key" value="quest_skillpoints200_description" />
+      <property name="icon" value="ui_game_symbol_skills" />
+      <property name="category_key" value="challenge" />
+      <property name="offer_key" value="quest_skillpoints200_offer" />
+      <property name="repeatable" value="true" />
+      <property name="difficulty" value="veryeasy" />
+      <property name="shareable" value="false" />
+
+      <reward type="SkillPoints" value="200" />
+  	</quest>
+    <quest id="quest_BasicSurvival1a">
+      <property name="name_key" value="quest_BasicSurvival1a" />
+      <property name="subtitle_key" value="quest_BasicSurvival1a_subtitle" />
+      <property name="description_key" value="quest_BasicSurvival1a_description" />
+      <property name="icon" value="ui_game_symbol_map_bed" />
+      <property name="category_key" value="quest" />
+      <property name="offer_key" value="quest_BasicSurvival1a_offer" />
+      <property name="difficulty" value="veryeasy" />
+      <property name="shareable" value="false" />
+
+      <action type="ShowTip" value="tutorialTipQuest03"/>
+
+      <objective type="ZombieKill" value="1" />
+
+      <reward type="Quest" id="quest_whiteRiverCitizen1" />
+  	</quest>
+    <quest id="challenge_unknown1">
+      <property name="name_key" value="challenge_unknown1"/>
+      <property name="subtitle_key" value="challenge_unknown1_subtitle"/>
+      <property name="description_key" value="challenge_unknown1_offer"/>
+      <property name="icon" value="ui_game_symbol_x"/>
+      <property name="repeatable" value="true"/>
+      <property name="category_key" value="challenge"/>
+      <property name="offer_key" value="challenge_unknown1_offer"/>
+      <property name="difficulty" value="insane"/>
+      <!-- <property name="completiontype" value="TurnIn"/> -->
+
+      <objective type="RandomGoto" value="100-200" phase="1">
+        <property name="completion_distance" value="25"/>
+        <property name="nav_object" value="quest" />
+      </objective>
+
+      <objective type="RallyPoint">
+        <property name="start_mode" value="Create"/>
+        <property name="phase" value="2"/>
+        <property name="nav_object" value="rally" />
+      </objective>
+
+      <action type="SpawnEnemy" id="zombieBoe,zombieJoe,zombieSteve,zombieMoe,zombieYo,zombieBusinessMan,zombieArlene,zombieDarlene,zombieMarlene,zombieSkateboarder,zombieCheerleader" value="14" phase="3"/>
+
+      <objective type="ZombieKill" id="zombieBoe,zombieJoe,zombieSteve,zombieMoe,zombieYo,zombieBusinessMan,zombieArlene,zombieDarlene,zombieMarlene,zombieSkateboarder,zombieCheerleader" value="12" phase="3"/>
+
+      <action type="SpawnEnemy" id="zombieBoeFeral,zombieFemaleFatFeral,zombieDarleneFeral,zombieYoFeral,zombieBusinessManFeral" value="14" phase="4"/>
+
+      <objective type="ZombieKill" id="zombieBoeFeral,zombieFemaleFatFeral,zombieDarleneFeral,zombieYoFeral,zombieBusinessManFeral" value="12" phase="4"/>
+
+      <action type="SpawnEnemy" id="zombieBoeRadiated,zombieArleneRadiated,zombieMarleneRadiated,zombieYoRadiated,zombieSpiderRadiated,zombieFatHawaiianRadiated" value="14" phase="5"/>
+
+      <objective type="ZombieKill" id="zombieBoeRadiated,zombieArleneRadiated,zombieMarleneRadiated,zombieYoRadiated,zombieSpiderRadiated,zombieFatHawaiianRadiated" value="12" phase="5"/>
+      
+      <reward type="SkillPoints" value="2"/>
+    </quest>
+    <quest id="challenge_unknown2">
+      <property name="name_key" value="challenge_unknown2"/>
+      <property name="subtitle_key" value="challenge_unknown2_subtitle"/>
+      <property name="description_key" value="challenge_unknown2_offer"/>
+      <property name="icon" value="ui_game_symbol_x"/>
+      <property name="repeatable" value="true"/>
+      <property name="category_key" value="challenge"/>
+      <property name="offer_key" value="challenge_unknown2_offer"/>
+      <property name="difficulty" value="insane"/>
+      <!-- <property name="completiontype" value="TurnIn"/> -->
+
+      <objective type="RandomGoto" value="100-200" phase="1">
+        <property name="completion_distance" value="25"/>
+        <property name="nav_object" value="quest" />
+      </objective>
+
+      <objective type="RallyPoint">
+        <property name="start_mode" value="Create"/>
+        <property name="phase" value="2"/>
+        <property name="nav_object" value="rally" />
+      </objective>
+
+      <action type="SpawnEnemy" id="animalZombieVulture" value="8" phase="3"/>
+      <action type="SpawnEnemy" id="animalZombieDog" value="10" phase="3"/>
+
+      <objective type="ZombieKill" id="animalZombieDog" value="8" phase="3"/>
+
+      <action type="SpawnEnemy" id="animalWolf,animalBigSnake" value="12" phase="3"/>
+      <action type="SpawnEnemy" id="animalSpider,animalSpider02,animalDireWolf" value="7" phase="4"/>
+
+      <objective type="ZombieKill" id="animalWolf,animalBigSnake,animalSpider" value="7" phase="4"/>
+
+      <action type="SpawnEnemy" id="animalZombieBear" value="5" phase="5"/>
+      <action type="SpawnEnemy" id="animalHellWolf" value="1" phase="5"/>
+      <action type="SpawnEnemy" id="animalZombieDogRad" value="10" phase="5"/>
+
+      <objective type="ZombieKill" id="animalZombieBear,animalZombieDogRad,animalHellWolf" value="9" phase="5"/>
+      
+      <reward type="SkillPoints" value="3"/>
+    </quest>
+    <quest id="challenge_unknown3">
+      <property name="name_key" value="challenge_unknown3"/>
+      <property name="subtitle_key" value="challenge_unknown3_subtitle"/>
+      <property name="description_key" value="challenge_unknown3_offer"/>
+      <property name="icon" value="ui_game_symbol_x"/>
+      <property name="repeatable" value="true"/>
+      <property name="category_key" value="challenge"/>
+      <property name="offer_key" value="challenge_unknown3_offer"/>
+      <property name="difficulty" value="insane"/>
+      <!-- <property name="completiontype" value="TurnIn"/> -->
+
+      <objective type="RandomGoto" value="100-200" phase="1">
+        <property name="completion_distance" value="25"/>
+        <property name="nav_object" value="quest" />
+      </objective>
+
+      <objective type="RallyPoint">
+        <property name="start_mode" value="Create"/>
+        <property name="phase" value="2"/>
+        <property name="nav_object" value="rally" />
+      </objective>
+
+      <!-- <action type="SpawnEnemy" id="DFNightStalkerQuest" value="8" phase="3"/>
+      <action type="SpawnEnemy" id="DFNightStalkerBoss" value="4" phase="3"/>
+
+      <objective type="Fetch" id="questToken" value="10" phase="3"/> -->
+
+      <action type="SpawnEnemy" id="DFNightStalker" value="10" phase="3"/>
+      <action type="SpawnEnemy" id="DFNightStalkerBoss" value="3" phase="3"/>
+      <action type="SpawnEnemy" id="zombieWightFeral" value="5" phase="3"/>
+
+      <objective type="ZombieKill" id="DFNightStalker,DFNightStalkerBoss,zombieWightFeral" value="4" phase="3"/>
+
+      <action type="SpawnEnemy" id="zombieSoldierBoss,zombieMoeBoss,zombieNurseBoss,zombieFootballPlayerBoss,zombieFatCopBoss" value="12" phase="4"/>
+
+      <objective type="ZombieKill" id="zombieSoldierBoss,zombieMoeBoss,zombieNurseBoss,zombieFootballPlayerBoss,zombieFatCopBoss" value="10" phase="4"/>
+
+      <action type="SpawnEnemy" id="DFzombieBehemoth" value="3" phase="5"/>
+      <action type="SpawnEnemy" id="DFzombieBehemothRadiated" value="1" phase="5"/>
+      <action type="SpawnEnemy" id="zombieWightBoss" value="5" phase="5"/>
+      <action type="SpawnEnemy" id="DFNightStalkerBoss" value="5" phase="5"/>
+
+      <objective type="ZombieKill" id="DFzombieBehemoth,DFzombieBehemothRadiated,zombieWightBoss,DFNightStalkerBoss" value="5" phase="5"/>
+      
+      <reward type="SkillPoints" value="5"/>
+    </quest>
+  </append>
+<!-- Laborer -->
+  <insertAfter xpath="//quest[@id='quest_classtraininglaborer1']/objective[@id='resourceClayLump']">
+    <objective type="FetchKeep" id="resourceCrushedSand" value="400" />
+		<objective type="FetchKeep" id="resourceScrapIron" value="500" />
+  </insertAfter>
+  <insertAfter xpath="//quest[@id='quest_classtraininglaborer2']/objective[@type='BlockUpgrade']">
+    <objective type="FetchKeep" id="resourceCobblestones" value="1000" />
+		<objective type="FetchKeep" id="resourceWood" value="1000" />
+  </insertAfter>
+  <set xpath="//quest[@id='quest_classtraininglaborer4']/property[@name='subtitle']/@value">Gather resources and craft a forge</set>
+  <insertAfter xpath="/quests/quest[@id='quest_classtraininglaborer4']/objective[@id='resourceMetalPipe']">
+    <objective type="FetchKeep" id="forge" value="1" />
+		<objective type="BlockPlace" id="forge" value="1" />
+  </insertAfter>
+  <set xpath="//quest[@id='quest_classtraininglaborer5']/property[@name='subtitle']/@value">Reinforce your base</set>
+  <remove xpath="//quest[@id='quest_classtraininglaborer5']/objective"/>
+  <insertAfter xpath="//quest[@id='quest_classtraininglaborer5']/action">
+		<objective type="BlockUpgrade" value="500" />
+  </insertAfter>
+  <set xpath="//quest[@id='quest_classtraininglaborer6']/property[@name='subtitle']/@value">Get refined resources and craft iron tier equipment</set>
+  <remove xpath="//quest[@id='quest_classtraininglaborer6']/objective"/>
+  <insertAfter xpath="//quest[@id='quest_classtraininglaborer6']/action">
+		<objective type="FetchKeep" id="resourceCement" value="25" />
+		<objective type="FetchKeep" id="resourceForgedSteel" value="25" />
+		<objective type="FetchKeep" id="resourceForgedIron" value="500" />
+		<objective type="FetchKeep" id="resourceLeather" value="100" />
+    <objective type="Craft" id="meleeToolAxeT1IronFireaxe" value="1" />
+    <objective type="Craft" id="meleeToolPickT1IronPickaxe" value="1" />
+    <objective type="Craft" id="meleeToolShovelT1IronShovel" value="1" />
+    <objective type="Craft" id="meleeWpnClubT1BaseballBat" value="1" />
+  </insertAfter>
+
+<!-- Localization -->
+  <set xpath="//quest[@id='quest_classtraininglaborer4']/property[@name='subtitle_key']/@value">quest_classtraininglaborer4Nm_subtitle</set>
+  <set xpath="//quest[@id='quest_classtraininglaborer4']/property[@name='description_key']/@value">quest_classtraininglaborer4Nm_description</set>
+  <set xpath="//quest[@id='quest_classtraininglaborer5']/property[@name='subtitle_key']/@value">quest_classtraininglaborer5Nm_subtitle</set>
+  <set xpath="//quest[@id='quest_classtraininglaborer5']/property[@name='description_key']/@value">quest_classtraininglaborer5Nm_description</set>
+  <set xpath="//quest[@id='quest_classtraininglaborer6']/property[@name='subtitle_key']/@value">quest_classtraininglaborer6Nm_subtitle</set>
+  <set xpath="//quest[@id='quest_classtraininglaborer6']/property[@name='description_key']/@value">quest_classtraininglaborer6Nm_description</set>
+
+<!-- Treasure maps -->
+  <append xpath="//quest[starts-with(@id, 'treasure_')]/objective">
+		<property name="phase" value="1" />
+  </append>
+  <insertAfter xpath="//quest[starts-with(@id, 'treasure_')]/objective">
+		<action type="SpawnEnemy" id="DFNightStalker,zombieSpiderFeral,zombieBikerFeral,zombieFatCopFeral,zombieMoeFeral,zombieWightFeral,zombieUtilityWorkerFeral,zombieFootballPlayer,animalZombieDog" value="4-6" phase="2"/>
+  </insertAfter>
+<!-- Buried supplies quests -->
+  <remove xpath="//quest[contains(@id, '_buried_supplies')]/action[@type='SpawnEnemy']"/>
+  <insertAfter xpath="//quest[contains(@id, 'tier1_buried_supplies')]/objective[@type='FetchFromTreasure']">
+		<action type="SpawnEnemy" id="zombieMoe,animalZombieVulture,animalZombieDog,zombieBiker,zombieFatCop,zombieSpider," value="3-5" phase="2"/> <!-- scoutHordeStageGS11 -->
+  </insertAfter>
+  <insertAfter xpath="//quest[contains(@id, 'tier2_buried_supplies')]/objective[@type='FetchFromTreasure']">
+		<action type="SpawnEnemy" id="animalZombieVulture,zombieFatCop,DFNightStalker,zombieBiker,zombieMoe,zombieSpider,zombieSpiderFeral,zombieNurseFeral,zombieSoldier,animalZombieDog,zombieFootballPlayer" value="4-6" phase="2"/> <!-- scoutHordeStageGS42 -->
+  </insertAfter>
+  <insertAfter xpath="//quest[contains(@id, 'tier3_buried_supplies')]/objective[@type='FetchFromTreasure']">
+		<action type="SpawnEnemy" id="zombieFootballPlayer,zombieFatCopFeral,zombieSoldierFeral,zombieBikerFeral,zombieMoe,zombieSoldier,zombieFatHawaiianFeral,animalZombieDogRad,animalZombieVulture,zombieSpiderFeral,zombieUtilityWorkerFeral,zombieBiker,zombieWightFeral,zombieNurseFeral,zombieFatCop,zombieSpider,animalZombieDog,DFNightStalker" value="5-7" phase="2"/> <!-- scoutHordeStageGS82 -->
+  </insertAfter>
+  <insertAfter xpath="//quest[contains(@id, 'tier4_buried_supplies')]/objective[@type='FetchFromTreasure']">
+		<action type="SpawnEnemy" id="DFNightStalker,zombieBikerRadiated,zombieSpiderRadiated,zombieUtilityWorkerFeral,animalZombieDogRad,zombieFootballPlayerFeral,legendaryZombieBiker,animalZombieBear,legendaryZombieUtilityWorker,zombieSoldierFeral,zombieFatCopFeral,zombieDemolition,zombieWightRadiated,zombieSoldierRadiated,zombieWightFeral,zombieNurseFeral,zombieCheerleaderRadiated,zombieBikerFeral,zombieFootballPlayerRadiated,zombieFatHawaiianFeral" value="7-9" phase="2"/> <!-- scoutHordeStageGS165 -->
+  </insertAfter>
+  <insertAfter xpath="//quest[contains(@id, 'tier5_buried_supplies')]/objective[@type='FetchFromTreasure']">
+		<action type="SpawnEnemy" id="Incubus,animalHellwolf,zombieUtilityWorkerRadiated,legendaryZombieUtilityWorker,zombieDemolition,DFNightStalkerBoss,zombieFootballPlayerFeral,zombieBikerRadiated,DFzombieBehemothRadiated,zombieDemolitionMutated,zombieWightBoss,zombieNurseRadiated,zombieFatCopRadiated,zombieMoeBoss,zombieFatCopFeral,zombieNurseDemon,zombieSoldierBoss,zombieSoldierFeral,zombieWightDemon,zombieSoldierRadiated" value="10-12" phase="2"/> <!-- scoutHordeStageGS301 -->
+  </insertAfter>
+</configs>

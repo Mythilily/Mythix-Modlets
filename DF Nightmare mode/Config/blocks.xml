@@ -1,0 +1,83 @@
+<configs>
+  <append xpath="/blocks">
+  <block name="cntTestLoot">
+    <property name="Extends" value="cntGarageStorage"/>
+    <property name="LootList" value="200"/>
+  </block>
+  </append>
+  <set xpath="//block[@name='bodyBagBlackSpawner']/property[@name='TickRate']/@value">150</set>
+  <set xpath="//block[@name='bodyBagBlackSpawner']/property[@name='MaxSpawned']/@value">4</set>
+  <set xpath="//block[@name='bodyBagBlackSpawner']/property[@name='EntityGroup']/@value">SmallBunkerLabMu</set>
+  <append xpath="//block[@name='cntShippingCrateHero']">
+	  <property name="Class" value="Spawner, Mods" />
+    <property name="TickRate" value="500" />
+    <property name="SpawnRadius" value="3" />
+    <property name="SpawnArea" value="2" />
+    <property name="NumberToSpawn" value="1" />
+    <property name="MaxSpawned" value="3" />
+    <property name="CheckArea" value="4" />
+	  <property name="EntityGroup" value="Lootcratehero" />
+  </append>
+  <append xpath="//block[@name='cntShippingCrateLabEquipment']">
+  	<property name="Class" value="Spawner, Mods" />
+    <property name="TickRate" value="600" />
+    <property name="SpawnRadius" value="3" />
+    <property name="SpawnArea" value="2" />
+    <property name="NumberToSpawn" value="1" />
+    <property name="MaxSpawned" value="3" />
+    <property name="CheckArea" value="4" />
+	  <property name="EntityGroup" value="zombieLabWorkerGroupGS1" />
+  </append>
+  <append xpath="//block[@name='cntShippingCrateBookstore']">
+  	<property name="Class" value="Spawner, Mods" />
+    <property name="TickRate" value="600" />
+    <property name="SpawnRadius" value="3" />
+    <property name="SpawnArea" value="2" />
+    <property name="NumberToSpawn" value="1" />
+    <property name="MaxSpawned" value="3" />
+    <property name="CheckArea" value="4" />
+	  <property name="EntityGroup" value="zombieBusinessManGroupGS1" />
+  </append>
+  <append xpath="//block[@name='cntShippingCrateCarParts']">
+  	<property name="Class" value="Spawner, Mods" />
+    <property name="TickRate" value="600" />
+    <property name="SpawnRadius" value="3" />
+    <property name="SpawnArea" value="2" />
+    <property name="NumberToSpawn" value="1" />
+    <property name="MaxSpawned" value="3" />
+    <property name="CheckArea" value="4" />
+	  <property name="EntityGroup" value="zombieBikerBarGroupGS1" />
+  </append>
+  <append xpath="//block[@name='cntShippingCrateShotgunMessiah']">
+  	<property name="Class" value="Spawner, Mods" />
+    <property name="TickRate" value="600" />
+    <property name="SpawnRadius" value="3" />
+    <property name="SpawnArea" value="2" />
+    <property name="NumberToSpawn" value="1" />
+    <property name="MaxSpawned" value="3" />
+    <property name="CheckArea" value="4" />
+	  <property name="EntityGroup" value="zombieSoldierGroupGS1" />
+  </append>
+  <append xpath="//block[@name='cntShippingCrateWorkingStiffs']">
+  	<property name="Class" value="Spawner, Mods" />
+    <property name="TickRate" value="600" />
+    <property name="SpawnRadius" value="3" />
+    <property name="SpawnArea" value="2" />
+    <property name="NumberToSpawn" value="1" />
+    <property name="MaxSpawned" value="3" />
+    <property name="CheckArea" value="4" />
+	  <property name="EntityGroup" value="zombieUtilityWorkerGroupGS1" />
+  </append>
+  <append xpath="//block[@name='cntShippingCrateConstructionSupplies']">
+  	<property name="Class" value="Spawner, Mods" />
+    <property name="TickRate" value="600" />
+    <property name="SpawnRadius" value="3" />
+    <property name="SpawnArea" value="2" />
+    <property name="NumberToSpawn" value="1" />
+    <property name="MaxSpawned" value="3" />
+    <property name="CheckArea" value="4" />
+	  <property name="EntityGroup" value="zombieUtilityWorkerGroupGS1" />
+  </append>
+
+  <set xpath="//property[@name='OneBlockCrouch']/@value">false</set>
+</configs>

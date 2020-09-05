@@ -1,0 +1,5 @@
+<configs>
+  <append xpath="//window_group[@name='mainMenuLogo']">
+    <window name="Nightmaremode" anchor="RightTop"/>
+  </append>
+</configs>

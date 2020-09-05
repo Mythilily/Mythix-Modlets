@@ -1,0 +1,24 @@
+<configs>
+  <remove xpath="//item_modifier[@name='modGunMeleeShredderAmmo']/effect_group/triggered_effect[@buff='buffArmorShredding']"/>
+  <append xpath="//item_modifier[@name='modGunMeleeShredderAmmo']/effect_group[1]">
+    <triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffArmorShreddingAuto">
+      <requirement name="HoldingItemHasTags" tags="perkAutomaticWeapons"/>
+    </triggered_effect>
+    <triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffArmorShreddingPistol">
+      <requirement name="HoldingItemHasTags" tags="perkGunslinger,perkShotgunMessiah"/>
+    </triggered_effect>
+    <triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffArmorShredding">
+      <requirement name="!HoldingItemHasTags" tags="perkAutomaticWeapons,perkGunslinger,perkShotgunMessiah"/>
+    </triggered_effect>
+  </append>
+  <set xpath="//item_modifier[@name='modGunMeleeLiquidNitrogen']/property[@name='DescriptionKey']/@value">modGunMeleeLiquidNitrogenNmDesc</set>
+  <append xpath="//item_modifier[@name='modGunMeleeLiquidNitrogen']">
+		<effect_group name="Demon solidifier" tiered="false">
+			<requirements>
+        <requirement name="EntityTagCompare" target="other" tags="demon"/>
+				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="50" />
+			</requirements>
+			<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffColdDemon" />
+		</effect_group>
+  </append>
+</configs>

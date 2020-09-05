@@ -1,0 +1,5 @@
+<configs>
+  <append xpath="//window[@name='DFallsingameMenu']">
+	<label name="NMversion" pos="0, -215" depth="0" size="250,33" text="NM - EXP 1" font_size="42" effect="outline" color="[darkRed]" justify="center" />
+  </append>
+</configs>

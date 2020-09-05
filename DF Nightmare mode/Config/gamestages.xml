@@ -1,0 +1,9 @@
+<configs>
+  <!-- <set xpath="/gamestages/config/@adventurerGameDifficultyBonus">1.75</set>
+  <set xpath="/gamestages/config/@nomadGameDifficultyBonus">2.5</set>
+  <set xpath="/gamestages/config/@warriorGameDifficultyBonus">3.25</set>
+  <set xpath="/gamestages/config/@survivalistGameDifficultyBonus">4.0</set>
+  <set xpath="/gamestages/config/@insaneGameDifficultyBonus">5.0</set> -->
+
+  <set xpath="/gamestages/config/@diminishingReturns">0.1</set>
+</configs>

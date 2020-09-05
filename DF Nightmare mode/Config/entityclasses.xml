@@ -1,0 +1,129 @@
+<configs>
+<!-- multiplied regen -->
+  <set xpath="//effect_group[@name='Base Effects']/triggered_effect[@cvar='RadiatedRegenAmount' and @value='9']/@value">18</set>
+  <set xpath="//effect_group[@name='Base Effects']/triggered_effect[@cvar='RadiatedRegenAmount' and @value='8.1']/@value">16.2</set>
+  <set xpath="//effect_group[@name='Base Effects']/triggered_effect[@cvar='RadiatedRegenAmount' and @value='8']/@value">16</set>
+  <set xpath="//effect_group[@name='Base Effects']/triggered_effect[@cvar='RadiatedRegenAmount' and @value='6.5']/@value">13</set>
+  <set xpath="//effect_group[@name='Base Effects']/triggered_effect[@cvar='RadiatedRegenAmount' and @value='5']/@value">10</set>
+  <set xpath="//effect_group[@name='Base Effects']/triggered_effect[@cvar='RadiatedRegenAmount' and @value='4.5']/@value">9</set>
+  <set xpath="//effect_group[@name='Base Effects']/triggered_effect[@cvar='RadiatedRegenAmount' and @value='4']/@value">8</set>
+  <set xpath="//effect_group[@name='Base Effects']/triggered_effect[@cvar='RadiatedRegenAmount' and @value='3.7']/@value">7.4</set>
+  <set xpath="//effect_group[@name='Base Effects']/triggered_effect[@cvar='RadiatedRegenAmount' and @value='3']/@value">6</set>
+  <set xpath="//effect_group[@name='Base Effects']/triggered_effect[@cvar='RadiatedRegenAmount' and @value='2.5']/@value">5</set>
+  <set xpath="//effect_group[@name='Base Effects']/triggered_effect[@cvar='RadiatedRegenAmount' and @value='2']/@value">4</set>
+
+  <set xpath="//effect_group[@name='Base Effects']/passive_effect[@name='HealthChangeOT' and @value='1.4']/@value">7</set>
+<!-- zombie AoE buffs -->
+  <remove xpath="//entity_class[@name='zombieNurseRadiated']/property[@name='Buffs']"/>
+  <insertBefore xpath="//entity_class[@name='zombieNurse']/effect_group">
+    <property name="Buffs" value="buffZombieHealTrigger"/>
+  </insertBefore>
+  <insertBefore xpath="//entity_class[@name='zombieFootballPlayer']/effect_group">
+    <property name="Buffs" value="buffZombieSpeedTrigger"/>
+  </insertBefore>
+  <insertBefore xpath="//entity_class[@name='zombieSoldier']/effect_group">
+    <property name="Buffs" value="buffZombieProtectionTrigger"/>
+  </insertBefore>
+  <insertBefore xpath="//entity_class[@name='zombieBiker']/effect_group">
+    <property name="Buffs" value="buffZombieStrengthTrigger"/>
+  </insertBefore>
+  <insertBefore xpath="//entity_class[@name='zombieCheerleader']/effect_group">
+    <property name="Buffs" value="buffZombieJumpTrigger"/>
+  </insertBefore>
+<!-- Base resistance -->
+  <remove xpath="//entity_class[contains(@name, 'Feral') or contains(@name, 'Radiated') or contains(@name, 'legendary') or contains(@name, 'Weak') or contains(@name, 'Boss') or contains(@name, 'Demon')]/effect_group[@name='Base Effects']/passive_effect[@name='PhysicalDamageResist']"/>
+  <set xpath="//entity_class[@name='zombieDemolition']/effect_group[@name='Base Effects']/passive_effect[@name='PhysicalDamageResist']/@value">10</set>
+  <set xpath="//entity_class[starts-with(@name, 'zombie') or starts-with(@name, 'DFzombie') or @name='animalZombieDogRad']/effect_group[@name='Base Effects']/passive_effect[@name='PhysicalDamageResist' and @operation='base_set']/@operation">base_add</set>
+  <!-- <set xpath="//entity_class[@name='DFzombieBikerFemaleWeak']/@extends">DFzombieBikerFemale</set> -->
+
+  <insertAfter xpath="//entity_class[@name='animalTemplateHostile']/property[@name='ExperienceGain']">
+    <effect_group name="Base Effects">
+      <passive_effect name="PhysicalDamageResist" operation="base_set" value="10"/>
+    </effect_group>
+  </insertAfter>
+  <append xpath="//entity_class[@name='zombieTemplateMale']/effect_group[@name='Base Effects']">
+    <passive_effect name="PhysicalDamageResist" operation="base_set" value="10"/>
+  </append>
+  <insertAfter xpath="//entity_class[@name='animalTemplateHostileDFNew']/property[@name='ExperienceGain']">
+    <passive_effect name="PhysicalDamageResist" operation="base_set" value="10"/>
+  </insertAfter>
+  <append xpath="//entity_class[contains(@name, 'Behemoth')]/effect_group[@name='Base Effects']">
+    <passive_effect name="PhysicalDamageResist" operation="base_set" value="10"/>
+  </append>
+  <set xpath="//entity_class[@name='DFNightStalker']/effect_group[@name='Base Effects']/passive_effect[@name='PhysicalDamageResist']/@value">20</set>
+  <append xpath="//entity_class[@name='DFNightStalkerBoss']/effect_group[@name='Base Effects']">
+    <passive_effect name="PhysicalDamageResist" operation="base_set" value="30"/>
+  </append>
+<!-- legendary resistance -->
+  <append xpath="//entity_class[starts-with(@name, 'legendary')]/effect_group[@name='Base Effects']">
+    <passive_effect name="BuffResistance" operation="base_add" value="1" tags="buffArmorShreddingAuto,buffArmorShreddingPistol,buffArmorShredding"/>
+    <passive_effect name="PhysicalDamageResist" operation="base_add" value="69"/>
+  </append>
+  <append xpath="//entity_class[starts-with(@name, 'legendary')]/property[@name='Tags']/@value">,legendary</append>
+
+<!-- Demon physical resistance -->
+  <append xpath="//entity_class[property[@name='Tags' and contains(@value, 'demon')]]/effect_group[@name='Base Effects']/passive_effect[@name='BuffResistance']/@tags">,buffArmorShreddingAuto,buffArmorShreddingPistol,buffArmorShredding</append>
+
+  <append xpath="//entity_class[property[@name='Tags' and contains(@value, 'demon')]]/effect_group[@name='Base Effects']">
+    <passive_effect name="PhysicalDamageResist" operation="base_add" value="30"/>
+  </append>
+  <append xpath="//entity_class[property[@name='Tags' and contains(@value, 'demon')]]/effect_group[@name='Base Effects' and not(passive_effect[@name='BuffResistance'])]">
+    <passive_effect name="BuffResistance" operation="base_add" value="1" tags="buffArmorShreddingAuto,buffArmorShreddingPistol,buffArmorShredding"/>
+  </append>
+<!-- Demon feral speed -->
+  <append xpath="//property[@name='Tags' and contains(@value, 'demon') and not(contains(@value, 'feral'))]/@value">,feral</append>
+<!-- Radiation aura for radiated zombies -->
+  <append xpath="//entity_class[contains(@name, 'Radiated') and not(contains(@name, 'Weak')) or @name='animalZombieDogRad']/property[@name='Buffs']/@value">,buffEmitRadiation</append>
+  <append xpath="//entity_class[contains(@name, 'Radiated') and not(contains(@name, 'Weak')) and not(property[@name='Buffs']) or @name='animalZombieDogRad' and not(property[@name='Buffs'])]">
+    <property name="Buffs" value="buffEmitRadiation"/>
+  </append>
+  <set xpath="//effect_group[@name='playerMale']/passive_effect[@name='BuffResistance' and contains(@tags, 'buffRadiationWeak') or contains(@tags, 'buffRadiationStrong')]/@tags">buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire</set>
+
+  <append xpath="//entity_class[@name='playerMale']">
+    <effect_group name="DFnightmaremode">
+      <triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="LootAbundance" operation="set" value=".5"/>
+      <!-- Snow biome -->
+      <passive_effect name="GameStage" operation="perc_add" value="0.125">
+        <requirement name="InBiome" biome="1"/>
+      </passive_effect>
+      <!-- Forest biome -->
+      <passive_effect name="GameStage" operation="perc_add" value="0.5">
+        <requirement name="InBiome" biome="3"/>
+      </passive_effect>
+      <!-- Desert biome -->
+      <passive_effect name="GameStage" operation="perc_add" value="0.25">
+        <requirement name="InBiome" biome="5"/>
+      </passive_effect>
+      <passive_effect name="LootGamestage" operation="perc_subtract" value="0.05"/>
+      <passive_effect name="LootDropProb" operation="perc_subtract" value="0.25"/>
+      <passive_effect name="BarteringSelling" operation="base_subtract" value="0.5"/>
+    </effect_group>
+  </append>
+  <append xpath="/entity_classes">
+    <entity_class name="EntityLootContainerBossQuest">
+      <property name="HideInSpawnMenu" value="true"/>
+      <property name="Mesh" value="#Entities/LootContainers?zpackPrefab.prefab"/>
+      <property name="ModelType" value="Custom"/>
+      <property name="Prefab" value="Backpack"/>
+      <property name="Class" value="EntityLootContainer"/>
+      <property name="Parent" value="Backpack"/>
+      <property name="IsEnemyEntity" value="false"/>
+      <property name="TimeStayAfterDeath" value="1200"/>
+      <property name="LootListOnDeath" value="201"/>
+      <property name="Faction" value="none"/>
+    </entity_class>
+    <entity_class name="zombieScreamerBehemoth" extends="zombieScreamerFeral">
+      <property name="SizeScale" value="2.0"/>
+      <property name="LootDropProb" value="0.3"/> <!-- Feral Rad Zombie. -->
+      <property name="LootDropEntityClass" value="EntityLootContainerBossQuest"/>
+      <effect_group name="Base Effects">
+        <passive_effect name="HealthMax" operation="base_set" value="9999"/>
+        <passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
+      </effect_group>
+    </entity_class>
+    <entity_class name="DFNightStalkerQuest" extends="DFNightStalker">
+      <property name="LootDropProb" value="2"/>
+      <property name="LootDropEntityClass" value="EntityLootContainerBossQuest"/>
+    </entity_class>
+  </append>
+</configs>
