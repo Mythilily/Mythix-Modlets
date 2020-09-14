@@ -1,6 +1,7 @@
 <configs>
-  <remove xpath="//window[@name='windowCompass']/*/label[@depth='2']">
-  <append xpath="//window[@name='windowCompass']/sprite[@pos='240,-60']">
-    <label depth="2" width="300" height="30" pos="38,-1" text="{daytitle}: [{daycolor|always}]{day|always}[-] {timetitle}: {time|always}" font_size="28" pivot="center" effect="outline" upper_case="true" justify="center"/>
+  <remove xpath="//window[@name='windowCompass']/*/label[@depth='2']"/>
+  <append xpath="//window[@name='windowCompass']/sprite[@pos='200,-60']">
+    <label depth="2" width="300" height="30" pos="38,12" text="{daytitle}: [{daycolor|always}]{day|always}[-]" font_size="28" pivot="center" effect="outline" upper_case="true" justify="center"/>
+    <label depth="2" width="300" height="30" pos="38,-12" text="{timetitle}: {time|always}" font_size="28" pivot="center" effect="outline" upper_case="true" justify="center"/>
   </append>
 </configs>
