@@ -38,8 +38,6 @@
     <item name="BVCruiserBook" prob="0.05"/>
     <item name="BVDirtBikeBook" prob="0.05"/>
   </append>
-  995
-  951
   <set xpath="//item[@group='gyroCopterParts' and @prob='0.05']/@prob">0.2</set>
   <!-- Bossloot -->
   <append xpath="//lootcontainer[@id='73']">
