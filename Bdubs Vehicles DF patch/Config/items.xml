@@ -1,5 +1,5 @@
 <configs>
-  <append xpath="//item[@name='BDUBS VEHICLES DF PATCH NOTE - Intended warnings from the original mod: 1x loot, 4x progression and 2x trader. If this patch has any please let me know.']">
+  <append xpath="//item[@name='BDUBS VEHICLES DF PATCH NOTE - Intended warnings from the original mod: 1x loot, 4x progression and 2x trader. If this patch has any please let me know.']"></append>
   <append xpath="//item[@name='meleeGolfClub']/property[@name='Tags']/@value">,1HandBlunt,weaponCrafting</append>
   <remove xpath="//item[@name='meleeGolfClub']/*/passive_effect[@name='DegradationMax']"/>
   <remove xpath="//item[@name='meleeGolfClub']/*/passive_effect[@name='ModSlots']"/>
