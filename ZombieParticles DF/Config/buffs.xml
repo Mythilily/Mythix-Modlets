@@ -1,0 +1,34 @@
+<configs>
+  <append xpath="//buffs">
+	<buff name="buffLegendParticle" hidden="true">
+		<stack_type value="replace"/>
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/minorparticles.unity3d?ShadowMeshGlow" local_offset="0,-.3,0" local_rotation="-90,0,0" parent_transform="LOD0" shape_mesh="true"/>
+
+			<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" target="self" particle="ShadowMeshGlow"/>
+			<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" target="self" particle="ShadowMeshGlow" />
+		</effect_group>
+	</buff>
+	<buff name="buffLegendParticleBiker" hidden="true">
+		<stack_type value="replace"/>
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffLegendaryBoss"/>
+			<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/minorparticles.unity3d?ShadowMeshGlow" local_offset="0,-.3,0" local_rotation="-90,0,0" parent_transform="LOD0" shape_mesh="true"/>
+
+			<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" target="self" particle="ShadowMeshGlow"/>
+			<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" target="self" particle="ShadowMeshGlow" />
+		</effect_group>
+	</buff>
+  </append>
+  <append xpath="//buff[starts-with(@name, 'buffZombie') and not(contains(@name, 'Trigger')) and not(contains(@name, 'Wight'))]">
+	<effect_group>
+		<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/minorparticles.unity3d?RegenerateRed" local_offset="0,0,0" local_rotation="-90,0,0" parent_transform="Hips"/>
+
+		<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" target="self" particle="RegenerateRed"/>
+		<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" target="self" particle="RegenerateRed" />
+	</effect_group>
+  </append>
+	<append xpath="//buff[starts-with(@name, 'buffZombie') and contains(@name, 'BossTrigger')]/effect_group">
+		<triggered_effect trigger="onSelfBuffUpdate" action="RemoveParticleEffectFromEntity" target="self" particle="RegenerateRed"/>
+	</append>
+</configs>

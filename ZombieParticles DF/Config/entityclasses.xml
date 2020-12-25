@@ -1,0 +1,6 @@
+<configs>
+  <append xpath="//entity_class[starts-with(@name, 'legendary') and not(contains(@name, 'legendaryZombieBiker'))]">
+    <property name="Buffs" value="buffLegendParticle"/>
+  </append>
+  <set xpath="//entity_class[contains(@name, 'legendaryZombieBiker')]/property[@name='Buffs']/@value">buffLegendParticleBiker</set>
+</configs>
