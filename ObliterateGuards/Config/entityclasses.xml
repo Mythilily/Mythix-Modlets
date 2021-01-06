@@ -1,0 +1,4 @@
+<configs>
+  <set xpath="//entity_class[@name='npcGuardTemplate']/property[@name='TimeStayAfterDeath']/@value">0</set>
+  <set xpath="//entity_class[@name='npcGuardTemplate']/*/passive_effect[@name='HealthMax']/@value">0</set>
+</configs>

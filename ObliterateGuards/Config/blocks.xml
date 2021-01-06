@@ -1,0 +1,15 @@
+<configs>
+  <!-- <set xpath="//block[contains(@name, 'DFSpawnGuard') and property[contains(@value, 'npcFemaleGuard')] or property[contains(@value, 'npcMaleGuard')]]/property[@name='Model']/@value">Entities/Misc/missing_blockPrefab</set>
+    <append xpath="//block[contains(@name, 'DFSpawnGuard') and property[contains(@value, 'npcFemaleGuard')] or property[contains(@value, 'npcMaleGuard')]]">
+      <property name="Texture" value="250"/>
+    </append>
+  <remove xpath="//block[contains(@name, 'DFSpawnGuard') and property[contains(@value, 'npcFemaleGuard')] or property[contains(@value, 'npcMaleGuard')]]/property[@name='Class' or @name='SpawnClass' or @name='Mesh' or @name='HandleFace' or @name='Model']"/> -->
+  <set xpath="//block[contains(@name, 'DFSpawnGuard') and property[contains(@value, 'npcFemaleGuard')] or property[contains(@value, 'npcMaleGuard')]]">
+    <property name="Material" value="Mair"/>
+    <property name="Shape" value="Invisible"/>
+    <property name="Texture" value="250"/>
+    <property name="FilterTags" value="fterrain"/>
+    <property name="SortOrder1" value="d0j0"/>
+    <property name="SortOrder2" value="0050"/>
+  </set>
+</configs>
