@@ -16,9 +16,9 @@
       <item group="MD500group"/>
       <item group="Dustergroup"/>
       <item group="UH60group"/>
-      <item name="vehicleWheels"/>
-      <item name="smallEngine"/>
-      <item name="carBattery"/>
+      <item name="vehicleWheels" prob="0.33"/>
+      <item name="smallEngine" prob="0.33"/>
+      <item name="carBattery" prob="0.33"/>
     </lootgroup>
   </insertBefore>
 	<append xpath="//lootgroup[@name='vehicleParts']">
@@ -38,7 +38,7 @@
     <item name="BVCruiserBook" prob="0.05"/>
     <item name="BVDirtBikeBook" prob="0.05"/>
   </append>
-  <set xpath="//item[@group='gyroCopterParts' and @prob='0.05']/@prob">0.2</set>
+  <set xpath="//item[@group='gyroCopterParts' and @prob='0.05']/@prob">0.4</set>
   <!-- Bossloot -->
   <append xpath="//lootcontainer[@id='73']">
     <item group="bdubsHighTierVehicles" loot_prob_template="probTemplate0.75"/>
@@ -52,14 +52,21 @@
   <append xpath="//lootcontainer[@id='951']">
     <item name="BVMilitaryVehicleBook" prob="0.1"/>
   </append>
-  
+  <!-- Behemoth -->
+  <append xpath="//lootcontainer[@id='977']">
+    <item group="gyroCopterParts" prob="0.2"/>
+    <item group="vehicleFlyingParts" prob="0.125"/>
+  </append>
+  <!-- Demon utilityworker -->
   <append xpath="//lootcontainer[@id='952']">
-    <item group="vehicleFlyingParts" prob="0.1"/>
+    <item group="vehicleFlyingParts" prob="0.25"/>
   </append>
+  <!-- Demon skater -->
   <append xpath="//lootcontainer[@id='949']">
-    <item group="vehicleFlyingParts" prob="0.1"/>
+    <item group="vehicleFlyingParts" prob="0.25"/>
   </append>
+  <!-- Demon biker -->
   <append xpath="//lootcontainer[@id='947']">
-    <item group="vehicleFlyingParts" prob="0.1"/>
+    <item group="vehicleFlyingParts" prob="0.25"/>
   </append>
 </configs>
